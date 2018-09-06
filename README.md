@@ -1,4 +1,4 @@
-# InstallationTool
+# InstallationManager
 Overview: An IaaS software, designed to support the deployment process using several DevOps tools, created to dismiss the need of developing a customized tool for a specific product. 
 
 1.	Use Case: Companies who work on windows-based software, in need of a simple, easily installed and easy-to-use task-based installation software.
