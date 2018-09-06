@@ -21,4 +21,3 @@ Technologies: Several software and automation tools will be used to support the 
 3.	Ansible: Automation tool for remote deployment.
 4.	Jenkins: To run any internal CI deployments, a console application version of the Executor must be created as well.
 
-Required Knowledge: C# Programming, WPF, Multithreading, Powershell scripting, Ansible, Networking.
