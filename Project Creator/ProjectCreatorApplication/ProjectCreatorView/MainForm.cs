@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProjectCreatorView
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseView.BaseMainForm
     {
         public MainForm()
         {
