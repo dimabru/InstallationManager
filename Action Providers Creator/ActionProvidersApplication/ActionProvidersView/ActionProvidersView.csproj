@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ActionProvidersEngine\ActionProvidersEngine.csproj">
-      <Project>{216e0542-ecc1-4ad4-a3ca-38951cb38236}</Project>
+      <Project>{8bee5e1e-58b6-4668-94a3-79953be30a0f}</Project>
       <Name>ActionProvidersEngine</Name>
     </ProjectReference>
   </ItemGroup>

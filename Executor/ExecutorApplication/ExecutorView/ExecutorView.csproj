@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExecutorEngine\ExecutorEngine.csproj">
-      <Project>{0ba3bcc6-ed0e-498a-b6a2-8d070313bd4c}</Project>
+      <Project>{f7f3ef51-6e57-4775-ab04-7cd3af8072c7}</Project>
       <Name>ExecutorEngine</Name>
     </ProjectReference>
   </ItemGroup>

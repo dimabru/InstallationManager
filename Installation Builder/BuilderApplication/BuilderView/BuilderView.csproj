@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BMainForm.Designer.cs">
+      <DependentUpon>BMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BuilderEngine\BuilderEngine.csproj">
-      <Project>{e0f1fcbe-56e2-4d05-b24b-39f0b9266e8a}</Project>
+      <Project>{65a04173-9ed3-4206-8f0c-9c2730ff8342}</Project>
       <Name>BuilderEngine</Name>
     </ProjectReference>
   </ItemGroup>

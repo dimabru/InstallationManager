@@ -1,6 +1,6 @@
-﻿namespace BuilderView
+﻿namespace BaseView
 {
-    partial class Form1
+    partial class BaseMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // BaseMainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(860, 489);
+            this.MinimumSize = new System.Drawing.Size(878, 536);
+            this.Name = "BaseMainForm";
+            this.Text = "Installation Manager";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

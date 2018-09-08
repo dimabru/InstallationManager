@@ -1,6 +1,6 @@
-﻿namespace ProjectCreatorView
+﻿namespace BuilderView
 {
-    partial class Form1
+    partial class BMainForm
     {
         /// <summary>
         /// Required designer variable.
