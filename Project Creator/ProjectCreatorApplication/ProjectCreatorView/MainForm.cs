@@ -13,6 +13,8 @@ namespace ProjectCreatorView
         public MainForm()
         {
             InitializeComponent();
+            
         }
+
     }
 }

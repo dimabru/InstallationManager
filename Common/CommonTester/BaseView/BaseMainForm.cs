@@ -17,7 +17,7 @@ namespace BaseView
             InitializeComponent();
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripDropDownButtonLicense_Click(object sender, EventArgs e)
         {
             new License().Show();
         }

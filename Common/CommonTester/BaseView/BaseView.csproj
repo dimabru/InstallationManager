@@ -48,10 +48,10 @@
     <Compile Include="BaseMainForm.Designer.cs">
       <DependentUpon>BaseMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="About\License.cs">
+    <Compile Include="License.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About\License.Designer.cs">
+    <Compile Include="License.Designer.cs">
       <DependentUpon>License.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,7 +60,7 @@
     <EmbeddedResource Include="BaseMainForm.resx">
       <DependentUpon>BaseMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="About\License.resx">
+    <EmbeddedResource Include="License.resx">
       <DependentUpon>License.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
