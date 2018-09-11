@@ -16,5 +16,19 @@ namespace ProjectCreatorView
             
         }
 
+        private void CreateProjectButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewProjectsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PropertiesButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
