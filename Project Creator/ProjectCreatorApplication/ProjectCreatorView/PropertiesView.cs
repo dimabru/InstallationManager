@@ -1,6 +1,7 @@
 ﻿using BaseView;
 using HelperLibrary;
 using HelperLibrary.Exceptions;
+using ProjectCreatorEngine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +12,13 @@ using System.Windows.Forms;
 
 namespace ProjectCreatorView
 {
-    public partial class PropertiesView : BaseView.BaseMainForm
+    public partial class PropertiesView : BaseMainForm
     {
         public PropertiesView()
         {
             InitializeComponent();
+
+            labelCurrentLocation.Text = ProjectInfo.ProjectLocation;
         }
 
         private void buttonProjectLocation_Click(object sender, EventArgs e)

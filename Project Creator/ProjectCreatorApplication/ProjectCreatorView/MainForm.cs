@@ -17,7 +17,7 @@ namespace ProjectCreatorView
 
         private void buttonProperties_Click(object sender, EventArgs e)
         {
-            new PropertiesView().Show();
+            new PropertiesView().ShowDialog();
         }
     }
 }
