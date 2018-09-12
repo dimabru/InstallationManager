@@ -28,57 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PropertiesButton = new System.Windows.Forms.Button();
-            this.ViewProjectsButton = new System.Windows.Forms.Button();
-            this.CreateProjectButton = new System.Windows.Forms.Button();
+            this.buttonProperties = new System.Windows.Forms.Button();
+            this.buttonViewProjects = new System.Windows.Forms.Button();
+            this.buttonCreateProject = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // PropertiesButton
+            // buttonProperties
             // 
-            this.PropertiesButton.Location = new System.Drawing.Point(77, 222);
-            this.PropertiesButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.PropertiesButton.Name = "PropertiesButton";
-            this.PropertiesButton.Size = new System.Drawing.Size(106, 23);
-            this.PropertiesButton.TabIndex = 6;
-            this.PropertiesButton.Text = "Properties";
-            this.PropertiesButton.UseVisualStyleBackColor = true;
-            this.PropertiesButton.Click += new System.EventHandler(this.PropertiesButton_Click);
+            this.buttonProperties.Location = new System.Drawing.Point(77, 222);
+            this.buttonProperties.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonProperties.Name = "buttonProperties";
+            this.buttonProperties.Size = new System.Drawing.Size(106, 23);
+            this.buttonProperties.TabIndex = 6;
+            this.buttonProperties.Text = "Properties";
+            this.buttonProperties.UseVisualStyleBackColor = true;
+            this.buttonProperties.Click += new System.EventHandler(this.buttonProperties_Click);
             // 
-            // ViewProjectsButton
+            // buttonViewProjects
             // 
-            this.ViewProjectsButton.Location = new System.Drawing.Point(77, 143);
-            this.ViewProjectsButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ViewProjectsButton.Name = "ViewProjectsButton";
-            this.ViewProjectsButton.Size = new System.Drawing.Size(106, 23);
-            this.ViewProjectsButton.TabIndex = 5;
-            this.ViewProjectsButton.Text = "View Projects";
-            this.ViewProjectsButton.UseVisualStyleBackColor = true;
-            this.ViewProjectsButton.Click += new System.EventHandler(this.ViewProjectsButton_Click);
+            this.buttonViewProjects.Location = new System.Drawing.Point(77, 143);
+            this.buttonViewProjects.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonViewProjects.Name = "buttonViewProjects";
+            this.buttonViewProjects.Size = new System.Drawing.Size(106, 23);
+            this.buttonViewProjects.TabIndex = 5;
+            this.buttonViewProjects.Text = "View Projects";
+            this.buttonViewProjects.UseVisualStyleBackColor = true;
             // 
-            // CreateProjectButton
+            // buttonCreateProject
             // 
-            this.CreateProjectButton.Location = new System.Drawing.Point(77, 65);
-            this.CreateProjectButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.CreateProjectButton.Name = "CreateProjectButton";
-            this.CreateProjectButton.Size = new System.Drawing.Size(106, 23);
-            this.CreateProjectButton.TabIndex = 4;
-            this.CreateProjectButton.Text = "Create Project";
-            this.CreateProjectButton.UseVisualStyleBackColor = true;
-            this.CreateProjectButton.Click += new System.EventHandler(this.CreateProjectButton_Click);
+            this.buttonCreateProject.Location = new System.Drawing.Point(77, 68);
+            this.buttonCreateProject.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonCreateProject.Name = "buttonCreateProject";
+            this.buttonCreateProject.Size = new System.Drawing.Size(106, 23);
+            this.buttonCreateProject.TabIndex = 4;
+            this.buttonCreateProject.Text = "Create Project";
+            this.buttonCreateProject.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(254, 331);
-            this.Controls.Add(this.PropertiesButton);
-            this.Controls.Add(this.ViewProjectsButton);
-            this.Controls.Add(this.CreateProjectButton);
-            this.MinimumSize = new System.Drawing.Size(270, 370);
+            this.ClientSize = new System.Drawing.Size(250, 299);
+            this.Controls.Add(this.buttonProperties);
+            this.Controls.Add(this.buttonViewProjects);
+            this.Controls.Add(this.buttonCreateProject);
             this.Name = "MainForm";
             this.Text = "Project Creator";
-            this.Controls.SetChildIndex(this.CreateProjectButton, 0);
-            this.Controls.SetChildIndex(this.ViewProjectsButton, 0);
-            this.Controls.SetChildIndex(this.PropertiesButton, 0);
+            this.Controls.SetChildIndex(this.buttonCreateProject, 0);
+            this.Controls.SetChildIndex(this.buttonViewProjects, 0);
+            this.Controls.SetChildIndex(this.buttonProperties, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,8 +83,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button PropertiesButton;
-        private System.Windows.Forms.Button ViewProjectsButton;
-        private System.Windows.Forms.Button CreateProjectButton;
+        private System.Windows.Forms.Button buttonProperties;
+        private System.Windows.Forms.Button buttonViewProjects;
+        private System.Windows.Forms.Button buttonCreateProject;
     }
 }

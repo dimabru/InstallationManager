@@ -13,22 +13,11 @@ namespace ProjectCreatorView
         public MainForm()
         {
             InitializeComponent();
-            
         }
 
-        private void CreateProjectButton_Click(object sender, EventArgs e)
+        private void buttonProperties_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ViewProjectsButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PropertiesButton_Click(object sender, EventArgs e)
-        {
-
+            new PropertiesView().Show();
         }
     }
 }

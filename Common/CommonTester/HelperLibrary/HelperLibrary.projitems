@@ -9,6 +9,9 @@
     <Import_RootNamespace>HelperLibrary</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Dialogs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\NotAFolderException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLFile.cs" />
   </ItemGroup>
 </Project>
