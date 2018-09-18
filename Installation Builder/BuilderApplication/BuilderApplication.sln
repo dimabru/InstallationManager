@@ -9,6 +9,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HelperLibrary", "..\..\Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderEngine", "BuilderEngine\BuilderEngine.csproj", "{65A04173-9ED3-4206-8F0C-9C2730FF8342}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseView", "..\..\Common\CommonTester\BaseView\BaseView.csproj", "{CBB2222D-D346-4262-B459-BFAD110AE902}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\Common\CommonTester\HelperLibrary\HelperLibrary.projitems*{65a04173-9ed3-4206-8f0c-9c2730ff8342}*SharedItemsImports = 4
@@ -27,6 +29,10 @@ Global
 		{65A04173-9ED3-4206-8F0C-9C2730FF8342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65A04173-9ED3-4206-8F0C-9C2730FF8342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65A04173-9ED3-4206-8F0C-9C2730FF8342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

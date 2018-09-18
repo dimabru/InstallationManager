@@ -52,7 +52,19 @@
       <DependentUpon>BMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="File\PropertiesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File\PropertiesView.Designer.cs">
+      <DependentUpon>PropertiesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BMainForm.resx">
+      <DependentUpon>BMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\PropertiesView.resx">
+      <DependentUpon>PropertiesView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,6 +88,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\CommonTester\BaseView\BaseView.csproj">
+      <Project>{cbb2222d-d346-4262-b459-bfad110ae902}</Project>
+      <Name>BaseView</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BuilderEngine\BuilderEngine.csproj">
       <Project>{65a04173-9ed3-4206-8f0c-9c2730ff8342}</Project>
       <Name>BuilderEngine</Name>
