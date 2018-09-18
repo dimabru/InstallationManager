@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,19 +52,16 @@
     <Compile Include="BMainForm.Designer.cs">
       <DependentUpon>BMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="File\PropertiesView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="File\PropertiesView.Designer.cs">
       <DependentUpon>PropertiesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BMainForm.resx">
       <DependentUpon>BMainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="File\PropertiesView.resx">
-      <DependentUpon>PropertiesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +94,9 @@
       <Project>{65a04173-9ed3-4206-8f0c-9c2730ff8342}</Project>
       <Name>BuilderEngine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="File\PropertyOptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

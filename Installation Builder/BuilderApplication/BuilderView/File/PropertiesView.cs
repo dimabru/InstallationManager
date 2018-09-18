@@ -1,17 +1,18 @@
 ﻿using BuilderEngine;
 using BuilderEngine.BuildOptions;
+using HelperLibrary;
+using HelperLibrary.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
 namespace BuilderView.File
 {
-    public partial class PropertiesView : BaseView.BaseMainForm
+    public partial class PropertiesView : BaseView.BaseProperties
     {
         public PropertiesView()
         {
@@ -22,22 +23,14 @@ namespace BuilderView.File
 
         private void populateOptions()
         {
-            XMLProperties properties;
-            try
-            {
-                properties = new XMLProperties(BasicInfo.BuildsConfigLocation);
-            }
-            catch (DirectoryNotFoundException)
-            {
-                BasicInfo.CreateDefaultInformation();
-                properties = new XMLProperties(BasicInfo.BuildsConfigLocation);
-            }
-            List<BuildOption> buildOptions = properties.options;
+            XMLProperties buildOptions = BasicInfo.LoadOptions();
 
-            foreach(BuildOption option in buildOptions)
+
+            foreach (string option in buildOptions.options)
             {
-                addNode(new TreeNode(option.optionName));
+                addNode(new TreeNode(option));
             }
+
         }
 
         private void addNode(TreeNode node)

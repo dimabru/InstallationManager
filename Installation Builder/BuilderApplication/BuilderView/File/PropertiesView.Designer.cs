@@ -28,52 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainerProperties = new System.Windows.Forms.SplitContainer();
-            this.treeViewOptions = new System.Windows.Forms.TreeView();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerProperties)).BeginInit();
-            this.splitContainerProperties.Panel1.SuspendLayout();
-            this.splitContainerProperties.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // splitContainerProperties
-            // 
-            this.splitContainerProperties.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerProperties.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerProperties.Name = "splitContainerProperties";
-            // 
-            // splitContainerProperties.Panel1
-            // 
-            this.splitContainerProperties.Panel1.Controls.Add(this.treeViewOptions);
-            this.splitContainerProperties.Size = new System.Drawing.Size(653, 500);
-            this.splitContainerProperties.SplitterDistance = 217;
-            this.splitContainerProperties.TabIndex = 1;
-            // 
-            // treeViewOptions
-            // 
-            this.treeViewOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewOptions.Location = new System.Drawing.Point(0, 0);
-            this.treeViewOptions.Name = "treeViewOptions";
-            this.treeViewOptions.Size = new System.Drawing.Size(217, 500);
-            this.treeViewOptions.TabIndex = 0;
-            // 
-            // PropertiesView
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(653, 526);
-            this.Controls.Add(this.splitContainerProperties);
-            this.Name = "PropertiesView";
-            this.Controls.SetChildIndex(this.splitContainerProperties, 0);
-            this.splitContainerProperties.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerProperties)).EndInit();
-            this.splitContainerProperties.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.components = new System.ComponentModel.Container();
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainerProperties;
-        private System.Windows.Forms.TreeView treeViewOptions;
     }
 }
