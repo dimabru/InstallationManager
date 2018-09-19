@@ -21,9 +21,9 @@ namespace BuilderView.File
         public PropertiesView()
         {
             InitializeComponent();
-            listViewOptions.Items[0].Selected = true;
 
             populateOptions();
+            listViewOptions.Items[0].Selected = true;
         }
 
         private void populateOptions()
@@ -70,6 +70,7 @@ namespace BuilderView.File
         private void buttonSave_Click(object sender, EventArgs e)
         {
             buildOptions.Save();
+            this.Close();
         }
     }
 }

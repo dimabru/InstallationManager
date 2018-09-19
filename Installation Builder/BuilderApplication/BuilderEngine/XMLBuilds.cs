@@ -1,4 +1,5 @@
 ﻿using HelperLibrary;
+using HelperLibrary.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,19 @@ namespace BuilderEngine
 
         private void populateBuilds()
         {
-            List<XElement> elements = GetElements("Build");
-            builds = new List<Build>();
+            List<XElement> elements;
+            try
+            {
+                elements = GetElements("Build");
+            }
+            catch (MissingElementException)
+            {
+                return;
+            }
+            finally
+            {
+                builds = new List<Build>();
+            }
 
             foreach (XElement element in elements)
             {

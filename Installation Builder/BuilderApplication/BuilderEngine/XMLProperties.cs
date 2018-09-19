@@ -52,7 +52,7 @@ namespace BuilderEngine
             XElement generalElement = general.Save();
             newDoc.Add(generalElement);
 
-            newDoc.Save(BasicInfo.BuildsConfigLocation);
+            newDoc.Save(DefaultInfo.BuildsConfigLocation);
         }
     }
 }

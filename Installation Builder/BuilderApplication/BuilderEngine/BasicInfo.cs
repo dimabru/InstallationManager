@@ -16,15 +16,14 @@ namespace BuilderEngine
     {
         // Project location needs to be extracted from an xml file.
         // If file corrupted or missing, go to DefaultInfo.DefaultPath.
-        public static string ProjectLocation = DefaultInfo.DefaultPath;
-        public static string BuildsLocation = $"{ProjectLocation}\\Builds";
+
+        public static string BuildsLocation = $"{DefaultInfo.ProjectLocation}\\Builds";
         public static string BuildsInfoLocation = $"{BuildsLocation}\\Builds.xml";
-        public static string BuildsConfigLocation = $".\\Config.xml";
-        public static string BuildsDefaultConfigFileLocation = $".\\OutFiles\\BuilderDefaultConfig.xml";
+
 
         public static void CreateDefaultDirectory()
         {
-            Directory.CreateDirectory(ProjectLocation);
+            Directory.CreateDirectory(DefaultInfo.ProjectLocation);
         }
 
         public static void CreateDefaultInformation()
@@ -35,8 +34,8 @@ namespace BuilderEngine
 
         private static void createDefaultConfig()
         {
-            XDocument defaultValues = XDocument.Load(BuildsDefaultConfigFileLocation);
-            defaultValues.Save(BuildsConfigLocation);
+            XDocument defaultValues = XDocument.Load(DefaultInfo.BuildsDefaultConfigFileLocation);
+            defaultValues.Save(DefaultInfo.BuildsConfigLocation);
         }
 
         private static void createDefaultBuildsFile()
@@ -45,6 +44,7 @@ namespace BuilderEngine
             XElement builds = new XElement("Builds");
             emptyBuilds.Add(builds);
 
+            Directory.CreateDirectory(BuildsLocation);
             emptyBuilds.Save(BuildsInfoLocation);
         }
         public static XMLProperties LoadOptions()
@@ -52,12 +52,12 @@ namespace BuilderEngine
             XMLProperties properties;
             try
             {
-                properties = new XMLProperties(BuildsConfigLocation);
+                properties = new XMLProperties(DefaultInfo.BuildsConfigLocation);
             }
             catch (Exception ex) when (ex is DirectoryNotFoundException || ex is XmlException || ex is FileNotFoundException)
             {
                 CreateDefaultInformation();
-                properties = new XMLProperties(BuildsConfigLocation);
+                properties = new XMLProperties(DefaultInfo.BuildsConfigLocation);
             }
             return properties;
         }
@@ -72,7 +72,7 @@ namespace BuilderEngine
             catch (Exception ex) when (ex is DirectoryNotFoundException || ex is XmlException || ex is FileNotFoundException)
             {
                 createDefaultBuildsFile();
-                builds = new XMLBuilds(BuildsLocation);
+                builds = new XMLBuilds(BuildsInfoLocation);
             }
             return builds;
         }

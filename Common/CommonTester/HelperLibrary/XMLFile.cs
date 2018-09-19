@@ -65,6 +65,10 @@ namespace HelperLibrary
 
         protected List<XElement> GetElements(string element)
         {
+            if (!HasElement(element))
+            {
+                throw new MissingElementException(element, xmlPath);
+            }
             return doc.Descendants(element).ToList();
         }
     }

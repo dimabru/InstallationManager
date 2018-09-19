@@ -58,7 +58,7 @@
             // labelCurrentPath
             // 
             this.labelCurrentPath.AutoSize = true;
-            this.labelCurrentPath.Location = new System.Drawing.Point(21, 39);
+            this.labelCurrentPath.Location = new System.Drawing.Point(21, 49);
             this.labelCurrentPath.Name = "labelCurrentPath";
             this.labelCurrentPath.Size = new System.Drawing.Size(115, 17);
             this.labelCurrentPath.TabIndex = 2;
