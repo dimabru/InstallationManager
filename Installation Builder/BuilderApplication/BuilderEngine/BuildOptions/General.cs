@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BuilderEngine.BuildOptions
 {
@@ -20,5 +21,16 @@ namespace BuilderEngine.BuildOptions
             buildPath = path;
         }
 
+        public override XElement Save()
+        {
+            XElement generalElement = new XElement(optionName);
+
+            XElement buildPathElement = new XElement("BuildPath");
+            buildPathElement.Value = buildPath;
+
+            generalElement.Add(buildPathElement);
+
+            return generalElement;
+        }
     }
 }

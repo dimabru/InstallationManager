@@ -18,7 +18,8 @@ namespace BuilderEngine
         // If file corrupted or missing, go to DefaultInfo.DefaultPath.
         public static string ProjectLocation = DefaultInfo.DefaultPath;
         public static string BuildsLocation = $"{ProjectLocation}\\Builds";
-        public static string BuildsConfigLocation = $"{BuildsLocation}\\Config.xml";
+        public static string BuildsInfoLocation = $"{BuildsLocation}\\Builds.xml";
+        public static string BuildsConfigLocation = $".\\Config.xml";
         public static string BuildsDefaultConfigFileLocation = $".\\OutFiles\\BuilderDefaultConfig.xml";
 
         public static void CreateDefaultDirectory()
@@ -34,12 +35,18 @@ namespace BuilderEngine
 
         private static void createDefaultConfig()
         {
-            Directory.CreateDirectory(BuildsLocation);
-
             XDocument defaultValues = XDocument.Load(BuildsDefaultConfigFileLocation);
             defaultValues.Save(BuildsConfigLocation);
         }
 
+        private static void createDefaultBuildsFile()
+        {
+            XDocument emptyBuilds = new XDocument();
+            XElement builds = new XElement("Builds");
+            emptyBuilds.Add(builds);
+
+            emptyBuilds.Save(BuildsInfoLocation);
+        }
         public static XMLProperties LoadOptions()
         {
             XMLProperties properties;
@@ -53,6 +60,21 @@ namespace BuilderEngine
                 properties = new XMLProperties(BuildsConfigLocation);
             }
             return properties;
+        }
+
+        public static XMLBuilds LoadBuilds()
+        {
+            XMLBuilds builds;
+            try
+            {
+                builds = new XMLBuilds(BuildsInfoLocation);
+            }
+            catch (Exception ex) when (ex is DirectoryNotFoundException || ex is XmlException || ex is FileNotFoundException)
+            {
+                createDefaultBuildsFile();
+                builds = new XMLBuilds(BuildsLocation);
+            }
+            return builds;
         }
     }
 }

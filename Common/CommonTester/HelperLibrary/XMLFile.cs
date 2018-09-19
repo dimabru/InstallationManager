@@ -62,5 +62,10 @@ namespace HelperLibrary
             }
             return doc.Descendants(element).ToList()[0].Value;
         }
+
+        protected List<XElement> GetElements(string element)
+        {
+            return doc.Descendants(element).ToList();
+        }
     }
 }

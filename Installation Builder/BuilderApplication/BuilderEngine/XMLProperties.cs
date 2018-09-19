@@ -42,13 +42,17 @@ namespace BuilderEngine
             catch(MissingAttributeException)
             {
             }
-            catch (XmlException ex)
-            {
-                Dialogs.ErrorMessage(ex.Message);
-                return;
-            }
             path += GetElementValue(element);
             general = new General(path);
+        }
+            
+        public void Save()
+        {
+            XDocument newDoc = new XDocument();
+            XElement generalElement = general.Save();
+            newDoc.Add(generalElement);
+
+            newDoc.Save(BasicInfo.BuildsConfigLocation);
         }
     }
 }

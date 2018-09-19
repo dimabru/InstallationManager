@@ -58,10 +58,22 @@
     <Compile Include="File\PropertiesView.Designer.cs">
       <DependentUpon>PropertiesView.cs</DependentUpon>
     </Compile>
+    <Compile Include="File\PropertyOptions\GeneralControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="File\PropertyOptions\GeneralControl.Designer.cs">
+      <DependentUpon>GeneralControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BMainForm.resx">
       <DependentUpon>BMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\PropertiesView.resx">
+      <DependentUpon>PropertiesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\PropertyOptions\GeneralControl.resx">
+      <DependentUpon>GeneralControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,8 +107,6 @@
       <Name>BuilderEngine</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="File\PropertyOptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
