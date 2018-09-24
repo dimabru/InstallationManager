@@ -17,4 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLFile.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Icons\edit_icon.ico" />
+  </ItemGroup>
 </Project>

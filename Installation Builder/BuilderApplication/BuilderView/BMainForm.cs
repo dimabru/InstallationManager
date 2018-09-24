@@ -51,5 +51,15 @@ namespace BuilderView
                 Dialogs.ErrorMessage($"Unable to load builds list\n{ex.Message}");
             }
         }
+
+        private void CreateNewBuildtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BuildView().ShowDialog();
+        }
+
+        private void buttonCreateNewBuild_Click(object sender, EventArgs e)
+        {
+            new BuildView().ShowDialog();
+        }
     }
 }

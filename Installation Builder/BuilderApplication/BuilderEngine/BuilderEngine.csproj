@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="BasicInfo.cs" />
     <Compile Include="Build.cs" />
+    <Compile Include="BuildOptions\BuildEditor.cs" />
     <Compile Include="BuildOptions\BuildOption.cs" />
     <Compile Include="BuildOptions\General.cs" />
+    <Compile Include="XMLBuildEditor.cs" />
     <Compile Include="XMLBuilds.cs" />
     <Compile Include="XMLProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

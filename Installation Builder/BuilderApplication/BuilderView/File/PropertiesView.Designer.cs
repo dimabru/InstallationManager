@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainerProperties = new System.Windows.Forms.SplitContainer();
-            this.listViewOptions = new System.Windows.Forms.ListView();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.listViewOptions = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerProperties)).BeginInit();
             this.splitContainerProperties.Panel1.SuspendLayout();
             this.splitContainerProperties.SuspendLayout();
@@ -41,6 +41,7 @@
             // 
             this.splitContainerProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerProperties.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerProperties.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainerProperties.Name = "splitContainerProperties";
             // 
             // splitContainerProperties.Panel1
@@ -48,46 +49,51 @@
             this.splitContainerProperties.Panel1.Controls.Add(this.buttonCancel);
             this.splitContainerProperties.Panel1.Controls.Add(this.buttonSave);
             this.splitContainerProperties.Panel1.Controls.Add(this.listViewOptions);
-            this.splitContainerProperties.Size = new System.Drawing.Size(861, 471);
-            this.splitContainerProperties.SplitterDistance = 287;
+            this.splitContainerProperties.Size = new System.Drawing.Size(646, 382);
+            this.splitContainerProperties.SplitterDistance = 215;
+            this.splitContainerProperties.SplitterWidth = 3;
             this.splitContainerProperties.TabIndex = 1;
-            // 
-            // listViewOptions
-            // 
-            this.listViewOptions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewOptions.Location = new System.Drawing.Point(0, 0);
-            this.listViewOptions.MultiSelect = false;
-            this.listViewOptions.Name = "listViewOptions";
-            this.listViewOptions.Size = new System.Drawing.Size(287, 471);
-            this.listViewOptions.TabIndex = 0;
-            this.listViewOptions.UseCompatibleStateImageBehavior = false;
-            this.listViewOptions.SelectedIndexChanged += new System.EventHandler(this.populateSettings);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(128, 445);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(209, 445);
+            this.buttonCancel.Location = new System.Drawing.Point(157, 362);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(56, 19);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(96, 362);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(56, 19);
+            this.buttonSave.TabIndex = 0;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // listViewOptions
+            // 
+            this.listViewOptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewOptions.Location = new System.Drawing.Point(0, 0);
+            this.listViewOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewOptions.MultiSelect = false;
+            this.listViewOptions.Name = "listViewOptions";
+            this.listViewOptions.Size = new System.Drawing.Size(215, 382);
+            this.listViewOptions.TabIndex = 0;
+            this.listViewOptions.UseCompatibleStateImageBehavior = false;
+            this.listViewOptions.SelectedIndexChanged += new System.EventHandler(this.populateSettings);
+            // 
             // PropertiesView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(861, 497);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(646, 404);
             this.Controls.Add(this.splitContainerProperties);
+            this.MinimumSize = new System.Drawing.Size(132, 227);
             this.Name = "PropertiesView";
             this.Text = "Properties";
             this.Controls.SetChildIndex(this.splitContainerProperties, 0);
