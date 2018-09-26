@@ -9,12 +9,14 @@
     <Import_RootNamespace>HelperLibrary</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Build.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DefaultInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dialogs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MissingAttributeException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MissingElementException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\NotAFolderException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XMLBuilds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLFile.cs" />
   </ItemGroup>
   <ItemGroup>

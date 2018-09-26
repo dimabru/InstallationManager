@@ -12,32 +12,35 @@ using System.Xml.Linq;
 
 namespace BuilderEngine
 {
+    // Class consists of static methods, created to retreive basic information in the Builder Application
     public class BasicInfo
     {
-        // Project location needs to be extracted from an xml file.
-        // If file corrupted or missing, go to DefaultInfo.DefaultPath.
-
+        // Location of the 'Builds' directory. Where all the builds will reside.
         public static string BuildsLocation = $"{DefaultInfo.ProjectLocation}\\Builds";
+        // Location of the info file containing all information about the current builds.
         public static string BuildsInfoLocation = $"{BuildsLocation}\\Builds.xml";
 
-
+        // Creates default directory in the project's location
         public static void CreateDefaultDirectory()
         {
             Directory.CreateDirectory(DefaultInfo.ProjectLocation);
         }
 
+        // Set default information. Use in case no information available
         public static void CreateDefaultInformation()
         {
             CreateDefaultDirectory();
             createDefaultConfig();
         }
 
+        // Create default config.xml file. Use in case file doesn't exist or corrupted
         private static void createDefaultConfig()
         {
             XDocument defaultValues = XDocument.Load(DefaultInfo.BuildsDefaultConfigFileLocation);
             defaultValues.Save(DefaultInfo.BuildsConfigLocation);
         }
 
+        // Create default Builds.xml file. Use in case file doesn't exist or corrupted 
         private static void createDefaultBuildsFile()
         {
             XDocument emptyBuilds = new XDocument();
@@ -47,6 +50,8 @@ namespace BuilderEngine
             Directory.CreateDirectory(BuildsLocation);
             emptyBuilds.Save(BuildsInfoLocation);
         }
+
+        // Load all options from the config.xml file to use in the 'Properties' window.
         public static XMLProperties LoadOptions()
         {
             XMLProperties properties;
@@ -62,6 +67,7 @@ namespace BuilderEngine
             return properties;
         }
 
+        // Load all builds from the Builds.xml file to use in the BMainForm builds list.
         public static XMLBuilds LoadBuilds()
         {
             XMLBuilds builds;

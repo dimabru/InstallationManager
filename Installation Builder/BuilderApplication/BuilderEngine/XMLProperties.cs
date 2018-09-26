@@ -11,6 +11,7 @@ using System.Xml.Linq;
 
 namespace BuilderEngine
 {
+    // Properties xml file. Loads data from config.xml file. 
     public class XMLProperties : XMLFile
     {
         public List<string> options { get; }
@@ -27,6 +28,7 @@ namespace BuilderEngine
             populateGeneral();
         }
 
+        // Populates the General option in properties. 
         private void populateGeneral()
         {
             string path = "";
@@ -45,7 +47,8 @@ namespace BuilderEngine
             path += GetElementValue(element);
             general = new General(path);
         }
-            
+
+        // Create an XElement item with all data
         public void Save()
         {
             XDocument newDoc = new XDocument();

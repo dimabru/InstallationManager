@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuilderEngine
+namespace HelperLibrary
 {
+    // Build class. Has all necessary information to execute a succesfull build.
     public class Build
     {
         public string name { get; }

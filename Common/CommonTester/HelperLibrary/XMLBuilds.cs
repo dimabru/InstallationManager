@@ -7,8 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BuilderEngine
+namespace HelperLibrary
 {
+    // Builds class. Loads Builds.xml file and conatins all builds listed in the xml.
     public class XMLBuilds : XMLFile
     {
         public List<Build> builds { get; set; }
@@ -18,6 +19,7 @@ namespace BuilderEngine
             populateBuilds();
         }
 
+        // Populate all builds inside Builds.xml.
         private void populateBuilds()
         {
             List<XElement> elements;
