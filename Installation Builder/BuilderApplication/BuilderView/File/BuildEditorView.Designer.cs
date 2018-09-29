@@ -30,13 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuildEditorView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.buttonEdit = new System.Windows.Forms.Button();
+            this.labelChoosePlugin = new System.Windows.Forms.Label();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.buttonEditTask = new System.Windows.Forms.Button();
             this.buttonAddTask = new System.Windows.Forms.Button();
             this.textBoxTaskName = new System.Windows.Forms.TextBox();
             this.treeViewPlugins = new System.Windows.Forms.TreeView();
-            this.textBoxActionDescription = new System.Windows.Forms.TextBox();
-            this.ButtonAdd = new System.Windows.Forms.Button();
-            this.comboBoxChooseActionProvider = new System.Windows.Forms.ComboBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.buttonAddPlugin = new System.Windows.Forms.Button();
+            this.comboBoxChoosePlugin = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -50,30 +52,50 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.buttonEdit);
+            this.splitContainer1.Panel1.Controls.Add(this.labelChoosePlugin);
+            this.splitContainer1.Panel1.Controls.Add(this.labelDescription);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonEditTask);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAddTask);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxTaskName);
             this.splitContainer1.Panel1.Controls.Add(this.treeViewPlugins);
-            this.splitContainer1.Panel1.Controls.Add(this.textBoxActionDescription);
-            this.splitContainer1.Panel1.Controls.Add(this.ButtonAdd);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBoxChooseActionProvider);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxDescription);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonAddPlugin);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBoxChoosePlugin);
             this.splitContainer1.Size = new System.Drawing.Size(622, 367);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 3;
             // 
-            // buttonEdit
+            // labelChoosePlugin
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(232, 56);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(68, 23);
-            this.buttonEdit.TabIndex = 9;
-            this.buttonEdit.Text = "Edit";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Visible = false;
+            this.labelChoosePlugin.AutoSize = true;
+            this.labelChoosePlugin.Location = new System.Drawing.Point(23, 12);
+            this.labelChoosePlugin.Name = "labelChoosePlugin";
+            this.labelChoosePlugin.Size = new System.Drawing.Size(75, 13);
+            this.labelChoosePlugin.TabIndex = 11;
+            this.labelChoosePlugin.Text = "Choose Plugin";
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Location = new System.Drawing.Point(20, 70);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(60, 13);
+            this.labelDescription.TabIndex = 10;
+            this.labelDescription.Text = "Description";
+            // 
+            // buttonEditTask
+            // 
+            this.buttonEditTask.Location = new System.Drawing.Point(358, 87);
+            this.buttonEditTask.Name = "buttonEditTask";
+            this.buttonEditTask.Size = new System.Drawing.Size(63, 23);
+            this.buttonEditTask.TabIndex = 9;
+            this.buttonEditTask.Text = "Edit";
+            this.buttonEditTask.UseVisualStyleBackColor = true;
+            this.buttonEditTask.Visible = false;
             // 
             // buttonAddTask
             // 
-            this.buttonAddTask.Location = new System.Drawing.Point(150, 56);
+            this.buttonAddTask.Location = new System.Drawing.Point(358, 46);
             this.buttonAddTask.Name = "buttonAddTask";
             this.buttonAddTask.Size = new System.Drawing.Size(63, 23);
             this.buttonAddTask.TabIndex = 8;
@@ -83,49 +105,52 @@
             // 
             // textBoxTaskName
             // 
-            this.textBoxTaskName.Location = new System.Drawing.Point(20, 56);
+            this.textBoxTaskName.Location = new System.Drawing.Point(320, 20);
             this.textBoxTaskName.Name = "textBoxTaskName";
-            this.textBoxTaskName.Size = new System.Drawing.Size(112, 20);
+            this.textBoxTaskName.Size = new System.Drawing.Size(101, 20);
             this.textBoxTaskName.TabIndex = 0;
             this.textBoxTaskName.Text = "Task name";
             // 
             // treeViewPlugins
             // 
-            this.treeViewPlugins.Location = new System.Drawing.Point(333, 20);
+            this.treeViewPlugins.HideSelection = false;
+            this.treeViewPlugins.Location = new System.Drawing.Point(427, 20);
             this.treeViewPlugins.Name = "treeViewPlugins";
-            this.treeViewPlugins.Size = new System.Drawing.Size(264, 166);
+            this.treeViewPlugins.Size = new System.Drawing.Size(192, 166);
             this.treeViewPlugins.TabIndex = 7;
             // 
-            // textBoxActionDescription
+            // textBoxDescription
             // 
-            this.textBoxActionDescription.Location = new System.Drawing.Point(20, 89);
-            this.textBoxActionDescription.Multiline = true;
-            this.textBoxActionDescription.Name = "textBoxActionDescription";
-            this.textBoxActionDescription.Size = new System.Drawing.Size(280, 97);
-            this.textBoxActionDescription.TabIndex = 6;
+            this.textBoxDescription.Location = new System.Drawing.Point(20, 89);
+            this.textBoxDescription.Multiline = true;
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ReadOnly = true;
+            this.textBoxDescription.Size = new System.Drawing.Size(280, 97);
+            this.textBoxDescription.TabIndex = 6;
             // 
-            // ButtonAdd
+            // buttonAddPlugin
             // 
-            this.ButtonAdd.Location = new System.Drawing.Point(195, 20);
-            this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(75, 23);
-            this.ButtonAdd.TabIndex = 4;
-            this.ButtonAdd.Text = "Add";
-            this.ButtonAdd.UseVisualStyleBackColor = true;
+            this.buttonAddPlugin.Location = new System.Drawing.Point(167, 29);
+            this.buttonAddPlugin.Name = "buttonAddPlugin";
+            this.buttonAddPlugin.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddPlugin.TabIndex = 4;
+            this.buttonAddPlugin.Text = "Add";
+            this.buttonAddPlugin.UseVisualStyleBackColor = true;
+            this.buttonAddPlugin.Click += new System.EventHandler(this.buttonAddPlugin_Click);
             // 
-            // comboBoxChooseActionProvider
+            // comboBoxChoosePlugin
             // 
-            this.comboBoxChooseActionProvider.FormattingEnabled = true;
-            this.comboBoxChooseActionProvider.Items.AddRange(new object[] {
+            this.comboBoxChoosePlugin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxChoosePlugin.FormattingEnabled = true;
+            this.comboBoxChoosePlugin.Items.AddRange(new object[] {
             "Action Provider1",
             "Action Provider2",
             "Action Provider3",
             "Action Provider4"});
-            this.comboBoxChooseActionProvider.Location = new System.Drawing.Point(20, 20);
-            this.comboBoxChooseActionProvider.Name = "comboBoxChooseActionProvider";
-            this.comboBoxChooseActionProvider.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxChooseActionProvider.TabIndex = 3;
-            this.comboBoxChooseActionProvider.Text = "Choose Action Provider";
+            this.comboBoxChoosePlugin.Location = new System.Drawing.Point(20, 31);
+            this.comboBoxChoosePlugin.Name = "comboBoxChoosePlugin";
+            this.comboBoxChoosePlugin.Size = new System.Drawing.Size(141, 21);
+            this.comboBoxChoosePlugin.TabIndex = 3;
             // 
             // BuildEditorView
             // 
@@ -148,12 +173,14 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBoxActionDescription;
-        private System.Windows.Forms.Button ButtonAdd;
-        private System.Windows.Forms.ComboBox comboBoxChooseActionProvider;
-        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.Button buttonAddPlugin;
+        private System.Windows.Forms.ComboBox comboBoxChoosePlugin;
+        private System.Windows.Forms.Button buttonEditTask;
         private System.Windows.Forms.Button buttonAddTask;
         private System.Windows.Forms.TextBox textBoxTaskName;
         private System.Windows.Forms.TreeView treeViewPlugins;
+        private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.Label labelChoosePlugin;
     }
 }

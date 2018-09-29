@@ -9,6 +9,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HelperLibrary", "..\..\Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecutorEngine", "ExecutorEngine\ExecutorEngine.csproj", "{F7F3EF51-6E57-4775-AB04-7CD3AF8072C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseView", "..\..\Common\CommonTester\BaseView\BaseView.csproj", "{CBB2222D-D346-4262-B459-BFAD110AE902}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\..\Common\CommonTester\HelperLibrary\HelperLibrary.projitems*{ae0301df-39d6-4084-9d2a-d8c3ec6ffaf7}*SharedItemsImports = 13
@@ -27,8 +29,15 @@ Global
 		{F7F3EF51-6E57-4775-AB04-7CD3AF8072C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7F3EF51-6E57-4775-AB04-7CD3AF8072C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7F3EF51-6E57-4775-AB04-7CD3AF8072C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB2222D-D346-4262-B459-BFAD110AE902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {222C2FF9-1738-4792-ABBB-6D88FEB46B7E}
 	EndGlobalSection
 EndGlobal

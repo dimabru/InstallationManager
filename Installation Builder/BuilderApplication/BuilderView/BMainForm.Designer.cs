@@ -30,6 +30,7 @@
         {
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewBuildtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +41,6 @@
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonCreateNewBuild = new System.Windows.Forms.Button();
-            this.CreateNewBuildtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,24 +61,31 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CreateNewBuildtoolStripMenuItem,
+            this.createNewBuildtoolStripMenuItem,
             this.propertiesToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // createNewBuildtoolStripMenuItem
+            // 
+            this.createNewBuildtoolStripMenuItem.Name = "createNewBuildtoolStripMenuItem";
+            this.createNewBuildtoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createNewBuildtoolStripMenuItem.Text = "Create New Build";
+            this.createNewBuildtoolStripMenuItem.Click += new System.EventHandler(this.createNewBuildtoolStripMenuItem_Click);
+            // 
             // propertiesToolStripMenuItem
             // 
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -108,7 +115,7 @@
             // listViewCurrentBuilds
             // 
             this.listViewCurrentBuilds.Location = new System.Drawing.Point(13, 95);
-            this.listViewCurrentBuilds.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewCurrentBuilds.Margin = new System.Windows.Forms.Padding(2);
             this.listViewCurrentBuilds.Name = "listViewCurrentBuilds";
             this.listViewCurrentBuilds.Size = new System.Drawing.Size(150, 146);
             this.listViewCurrentBuilds.TabIndex = 3;
@@ -128,7 +135,7 @@
             // richTextBoxDescription
             // 
             this.richTextBoxDescription.Location = new System.Drawing.Point(212, 95);
-            this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.Size = new System.Drawing.Size(163, 146);
             this.richTextBoxDescription.TabIndex = 5;
@@ -137,7 +144,7 @@
             // buttonEdit
             // 
             this.buttonEdit.Location = new System.Drawing.Point(13, 246);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(148, 34);
             this.buttonEdit.TabIndex = 6;
@@ -147,20 +154,13 @@
             // buttonCreateNewBuild
             // 
             this.buttonCreateNewBuild.Location = new System.Drawing.Point(536, 300);
-            this.buttonCreateNewBuild.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCreateNewBuild.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateNewBuild.Name = "buttonCreateNewBuild";
             this.buttonCreateNewBuild.Size = new System.Drawing.Size(100, 74);
             this.buttonCreateNewBuild.TabIndex = 7;
             this.buttonCreateNewBuild.Text = "Create New Build";
             this.buttonCreateNewBuild.UseVisualStyleBackColor = true;
             this.buttonCreateNewBuild.Click += new System.EventHandler(this.buttonCreateNewBuild_Click);
-            // 
-            // CreateNewBuildtoolStripMenuItem
-            // 
-            this.CreateNewBuildtoolStripMenuItem.Name = "CreateNewBuildtoolStripMenuItem";
-            this.CreateNewBuildtoolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.CreateNewBuildtoolStripMenuItem.Text = "Create New Build";
-            this.CreateNewBuildtoolStripMenuItem.Click += new System.EventHandler(this.CreateNewBuildtoolStripMenuItem_Click);
             // 
             // BMainForm
             // 
@@ -205,6 +205,6 @@
         private System.Windows.Forms.Button buttonCreateNewBuild;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CreateNewBuildtoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewBuildtoolStripMenuItem;
     }
 }

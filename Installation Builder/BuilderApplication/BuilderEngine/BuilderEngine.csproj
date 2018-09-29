@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicInfo.cs" />
-    <Compile Include="BuildEditor.cs" />
     <Compile Include="BuildOptions\BuildOption.cs" />
     <Compile Include="BuildOptions\General.cs" />
     <Compile Include="XMLBuildEditor.cs" />

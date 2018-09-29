@@ -12,6 +12,7 @@ namespace HelperLibrary
         public string name { get; }
         public string path { get; }
         public string description { get; set; }
+        public List<Task> tasks { get; set; }
 
         public Build(string buildName, string buildPath, string desc)
         {

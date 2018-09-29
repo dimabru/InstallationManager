@@ -52,9 +52,9 @@ namespace BuilderView
             }
         }
 
-        private void CreateNewBuildtoolStripMenuItem_Click(object sender, EventArgs e)
+        private void createNewBuildtoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new BuildEditorView().ShowDialog();
+            buttonCreateNewBuild_Click(sender, e);
         }
 
         private void buttonCreateNewBuild_Click(object sender, EventArgs e)

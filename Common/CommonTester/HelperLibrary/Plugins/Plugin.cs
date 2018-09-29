@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HelperLibrary.Plugins
 {
-    class Plugin
+    public class Plugin
     {
         public string name { get; }
         public string description { get; }
@@ -14,5 +14,11 @@ namespace HelperLibrary.Plugins
             name = this.GetType().Name;
             description = desc;
         }
+
+        public static List<string> PluginList = new List<string>()
+        {
+            "RunCmd"
+        };
     }
+
 }

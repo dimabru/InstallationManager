@@ -13,7 +13,11 @@ namespace HelperLibrary
 {
     public class XMLBuildEditor : XMLFile
     {
-        public XMLBuildEditor(string path) : base(path){}
+        public Build build { get; set; }
 
+        public XMLBuildEditor(string path) : base(path)
+        {
+
+        }
     }
 }
