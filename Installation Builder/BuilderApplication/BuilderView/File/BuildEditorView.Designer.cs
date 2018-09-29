@@ -39,8 +39,10 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonAddPlugin = new System.Windows.Forms.Button();
             this.comboBoxChoosePlugin = new System.Windows.Forms.ComboBox();
+            this.pluginControl = new BuilderView.File.PluginControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,10 @@
             this.splitContainer1.Panel1.Controls.Add(this.textBoxDescription);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAddPlugin);
             this.splitContainer1.Panel1.Controls.Add(this.comboBoxChoosePlugin);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pluginControl);
             this.splitContainer1.Size = new System.Drawing.Size(622, 367);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 3;
@@ -152,6 +158,15 @@
             this.comboBoxChoosePlugin.Size = new System.Drawing.Size(141, 21);
             this.comboBoxChoosePlugin.TabIndex = 3;
             // 
+            // pluginControl
+            // 
+            this.pluginControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pluginControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pluginControl.Location = new System.Drawing.Point(0, 0);
+            this.pluginControl.Name = "pluginControl";
+            this.pluginControl.Size = new System.Drawing.Size(622, 163);
+            this.pluginControl.TabIndex = 0;
+            // 
             // BuildEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +178,7 @@
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -182,5 +198,6 @@
         private System.Windows.Forms.TreeView treeViewPlugins;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelChoosePlugin;
+        private PluginControl pluginControl;
     }
 }

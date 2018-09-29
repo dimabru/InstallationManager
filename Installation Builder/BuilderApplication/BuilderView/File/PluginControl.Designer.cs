@@ -28,10 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.labelSelectPlugin = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // labelSelectPlugin
+            // 
+            this.labelSelectPlugin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSelectPlugin.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectPlugin.Location = new System.Drawing.Point(0, 0);
+            this.labelSelectPlugin.Name = "labelSelectPlugin";
+            this.labelSelectPlugin.Size = new System.Drawing.Size(605, 263);
+            this.labelSelectPlugin.TabIndex = 0;
+            this.labelSelectPlugin.Text = "Select Plugin";
+            this.labelSelectPlugin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PluginControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.labelSelectPlugin);
+            this.Name = "PluginControl";
+            this.Size = new System.Drawing.Size(605, 263);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label labelSelectPlugin;
     }
 }

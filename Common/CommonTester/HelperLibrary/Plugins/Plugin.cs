@@ -8,10 +8,11 @@ namespace HelperLibrary.Plugins
     {
         public string name { get; }
         public string description { get; }
+        protected List<InsertionValueHelper> insertions { get; set; }
 
-        public Plugin(string desc)
+        public Plugin(string desc, string Name)
         {
-            name = this.GetType().Name;
+            name = Name;
             description = desc;
         }
 

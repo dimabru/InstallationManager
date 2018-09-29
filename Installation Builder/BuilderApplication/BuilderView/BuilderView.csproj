@@ -84,6 +84,9 @@
     <EmbeddedResource Include="File\BuildEditorView.resx">
       <DependentUpon>BuildEditorView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="File\PluginControl.resx">
+      <DependentUpon>PluginControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="File\PropertiesView.resx">
       <DependentUpon>PropertiesView.cs</DependentUpon>
     </EmbeddedResource>
