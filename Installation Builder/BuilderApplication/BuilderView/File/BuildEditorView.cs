@@ -1,6 +1,5 @@
 ﻿using BuilderEngine;
 using BuilderEngine.BuildOptions;
-using BuilderView.File.BuildEditor;
 using HelperLibrary;
 using System;
 using System.Collections.Generic;

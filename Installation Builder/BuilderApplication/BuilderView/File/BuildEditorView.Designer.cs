@@ -37,10 +37,8 @@
             this.textBoxActionDescription = new System.Windows.Forms.TextBox();
             this.ButtonAdd = new System.Windows.Forms.Button();
             this.comboBoxChooseActionProvider = new System.Windows.Forms.ComboBox();
-            this.listViewPluginEditor = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,10 +57,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.textBoxActionDescription);
             this.splitContainer1.Panel1.Controls.Add(this.ButtonAdd);
             this.splitContainer1.Panel1.Controls.Add(this.comboBoxChooseActionProvider);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.listViewPluginEditor);
             this.splitContainer1.Size = new System.Drawing.Size(622, 367);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 3;
@@ -133,14 +127,6 @@
             this.comboBoxChooseActionProvider.TabIndex = 3;
             this.comboBoxChooseActionProvider.Text = "Choose Action Provider";
             // 
-            // listViewPluginEditor
-            // 
-            this.listViewPluginEditor.Location = new System.Drawing.Point(20, 19);
-            this.listViewPluginEditor.Name = "listViewPluginEditor";
-            this.listViewPluginEditor.Size = new System.Drawing.Size(577, 126);
-            this.listViewPluginEditor.TabIndex = 0;
-            this.listViewPluginEditor.UseCompatibleStateImageBehavior = false;
-            // 
             // BuildEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,7 +138,6 @@
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -170,6 +155,5 @@
         private System.Windows.Forms.Button buttonAddTask;
         private System.Windows.Forms.TextBox textBoxTaskName;
         private System.Windows.Forms.TreeView treeViewPlugins;
-        private System.Windows.Forms.ListView listViewPluginEditor;
     }
 }

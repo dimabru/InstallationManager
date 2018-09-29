@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BuilderEngine;
 
-namespace BuilderView.File.BuildEditor
+namespace BuilderView.File
 {
-    public partial class Plugins : UserControl
+    public partial class PluginControl : UserControl
     {
-        public Plugins(XMLBuildEditor properties)
+        public PluginControl()
         {
             InitializeComponent();
-
-            //buildEditor = properties.buildEditor;
-            //updateCurrentPath();
         }
     }
-    
 }

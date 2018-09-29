@@ -52,17 +52,17 @@
     <Compile Include="BMainForm.Designer.cs">
       <DependentUpon>BMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="File\BuildEditCreator\PluginControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="File\BuildEditCreator\PluginControl.Designer.cs">
-      <DependentUpon>PluginControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="File\BuildEditorView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="File\BuildEditorView.Designer.cs">
       <DependentUpon>BuildEditorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="File\PluginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="File\PluginControl.Designer.cs">
+      <DependentUpon>PluginControl.cs</DependentUpon>
     </Compile>
     <Compile Include="File\PropertiesView.cs">
       <SubType>Form</SubType>
