@@ -54,12 +54,12 @@ namespace BuilderView
 
         private void CreateNewBuildtoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new BuildView().ShowDialog();
+            new BuildEditorView().ShowDialog();
         }
 
         private void buttonCreateNewBuild_Click(object sender, EventArgs e)
         {
-            new BuildView().ShowDialog();
+            new BuildEditorView().ShowDialog();
         }
     }
 }

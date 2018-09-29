@@ -16,6 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MissingElementException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\NotAFolderException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XMLBuildEditor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLBuilds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLFile.cs" />
   </ItemGroup>

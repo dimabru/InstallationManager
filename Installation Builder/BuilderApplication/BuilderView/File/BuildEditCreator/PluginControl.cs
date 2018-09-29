@@ -11,9 +11,9 @@ using BuilderEngine;
 
 namespace BuilderView.File.BuildEditor
 {
-    public partial class Builds : UserControl
+    public partial class Plugins : UserControl
     {
-        public Builds(XMLBuildEditor properties)
+        public Plugins(XMLBuildEditor properties)
         {
             InitializeComponent();
 

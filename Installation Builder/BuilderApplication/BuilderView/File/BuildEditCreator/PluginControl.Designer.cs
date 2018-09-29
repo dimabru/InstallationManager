@@ -1,6 +1,6 @@
 ﻿namespace BuilderView.File.BuildEditor
 {
-    partial class Builds
+    partial class Plugins
     {
         /// <summary> 
         /// Required designer variable.
