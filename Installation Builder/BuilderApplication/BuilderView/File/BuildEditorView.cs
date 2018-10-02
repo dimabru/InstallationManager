@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
@@ -85,6 +87,33 @@ namespace BuilderView.File
         private bool checkCorrectPluginControlInput()
         {
             return true;
+        }  
+
+        private void updatePlugin(object sender, EventArgs e)
+        {
+            string selectedPlugin = comboBoxChoosePlugin.Text;
+
+            if (string.IsNullOrEmpty(selectedPlugin))
+            {
+                pluginControl.setPluginStatus(visible: true);
+                return;
+            }
+
+            Type[] types = GetTypesInNamespace(Assembly.GetExecutingAssembly(), "HelperLibrary.Plugins");
+
+            foreach (Type type in types)
+            {
+                MessageBox.Show(type.ToString());
+            }
+
+        }
+
+        private Type[] GetTypesInNamespace(Assembly assembly, string nameSpace)
+        {
+            return
+              assembly.GetTypes()
+                      .Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal))
+                      .ToArray();
         }
     }
 }
