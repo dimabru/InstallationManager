@@ -4,13 +4,19 @@ using System.Text;
 
 namespace HelperLibrary.Plugins
 {
-    class RunCmd : Plugin
+    public class RunCmd : Plugin
     {
-        private string command { get; }
+        public string command { get; set; }
 
-        public RunCmd(string cmd) : base(desc: "Execute a cmd.exe command", Name:"Run Command")
+        public RunCmd(string cmd) : base(desc: "Execute a cmd.exe command", Name: "Run Command")
         {
             command = cmd;
+            populateInsertions();
+        }
+
+        public RunCmd() : base(desc: "Execute a cmd.exe command", Name: "Run Command")
+        {
+            command = "";
             populateInsertions();
         }
 
@@ -18,5 +24,6 @@ namespace HelperLibrary.Plugins
         {
             InsertionValueHelper insert = new InsertionValueHelper(InsertionValueHelper.InputType.TextBox, "Enter a command to run");
         }
+
     }
 }

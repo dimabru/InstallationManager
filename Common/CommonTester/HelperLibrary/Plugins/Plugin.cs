@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 
 namespace HelperLibrary.Plugins
 {
@@ -16,10 +18,33 @@ namespace HelperLibrary.Plugins
             description = desc;
         }
 
-        public static List<string> PluginList = new List<string>()
+        public static List<Plugin> PluginList = new List<Plugin>();
+
+        public static void LoadPlugins()
         {
-            "RunCmd"
-        };
+            Type[] types = Utils.GetTypesInNamespace("Plugin", "HelperLibrary.Plugins");
+
+            foreach (Type type in types)
+            {
+                if (Utils.HasInheritedClass(type.ToString(), "Plugin"))
+                {
+                    Plugin plugin = (Plugin)Activator.CreateInstance(type);
+                    PluginList.Add(plugin);
+                }
+            }
+        }
+
+        public static Plugin LocatePlugin(string name)
+        {
+            foreach (Plugin plugin in PluginList)
+            {
+                if (plugin.name == name)
+                {
+                    return plugin;
+                }
+            }
+            return null;
+        }
     }
 
 }

@@ -57,9 +57,10 @@ namespace BuilderView.File
         {
             comboBoxChoosePlugin.Items.Clear();
 
-            foreach (string plugin in Plugin.PluginList)
+            Plugin.LoadPlugins();
+            foreach (Plugin plugin in Plugin.PluginList)
             {
-                comboBoxChoosePlugin.Items.Add(plugin);
+                comboBoxChoosePlugin.Items.Add(plugin.name);
             }
         }
 
@@ -96,24 +97,16 @@ namespace BuilderView.File
             if (string.IsNullOrEmpty(selectedPlugin))
             {
                 pluginControl.setPluginStatus(visible: true);
+                textBoxDescription.Text = String.Empty;
                 return;
             }
 
-            Type[] types = GetTypesInNamespace(Assembly.GetExecutingAssembly(), "HelperLibrary.Plugins");
-
-            foreach (Type type in types)
+            else
             {
-                MessageBox.Show(type.ToString());
+                Plugin plugin = Plugin.LocatePlugin(selectedPlugin);
+                textBoxDescription.Text = plugin.description;
             }
 
-        }
-
-        private Type[] GetTypesInNamespace(Assembly assembly, string nameSpace)
-        {
-            return
-              assembly.GetTypes()
-                      .Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal))
-                      .ToArray();
         }
     }
 }
