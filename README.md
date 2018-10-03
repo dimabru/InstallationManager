@@ -16,7 +16,7 @@ Features: The installation tool will have four major features. Each of them is r
 4.	Installation Executor: This tool will serve as the execution software for any installations created in the Installation Builder. After entering the predesigned set of parameters needed for the installation, the user can execute the installation, monitor its progress using a log window and stop the installation if necessary. 
 
 Technologies: Several software and automation tools will be used to support the installation tool.
-1.	Visual Studio: The platform used to create the specified-above tools, using WPF MVVM model.
+1.	Visual Studio: The platform used to create the specified-above tools.
 2.	SQL Server: Will be used to store any required information by the users, on their own servers. Information on any recent installations will also be stored using SQL database.
 3.	Ansible: Automation tool for remote deployment.
 4.	Jenkins: To run any internal CI deployments, a console application version of the Executor must be created as well.
