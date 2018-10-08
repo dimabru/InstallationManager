@@ -66,7 +66,7 @@ namespace BuilderView.File
 
         private void buttonAddPlugin_Click(object sender, EventArgs e)
         {
-            string plugin = comboBoxChoosePlugin.Text;
+            string pluginName = comboBoxChoosePlugin.Text;
 
             if (string.IsNullOrEmpty(plugin))
             {
@@ -74,12 +74,19 @@ namespace BuilderView.File
             }
             if (treeViewPlugins.SelectedNode == null || treeViewPlugins.SelectedNode.Level != 0)
             {
-                Dialogs.ErrorMessage($"Please select a task to assign {plugin} to");
+                Dialogs.ErrorMessage($"Please select a task to assign {pluginName} to");
                 return;
             }
             if (checkCorrectPluginControlInput())
             {
-                treeViewPlugins.SelectedNode.Nodes.Add(plugin);
+                treeViewPlugins.SelectedNode.Nodes.Add(pluginName);
+                Plugin plugin = Plugin.LocatePlugin(pluginName);
+                
+                pluginControl.resetInputs();
+            }
+            else
+            {
+                Dialogs.ErrorMessage("Please fill all fields");
             }
 
             treeViewPlugins.ExpandAll();
@@ -87,7 +94,7 @@ namespace BuilderView.File
 
         private bool checkCorrectPluginControlInput()
         {
-            return true;
+            return pluginControl.filledInputs();
         }  
 
         private void updatePlugin(object sender, EventArgs e)
@@ -105,6 +112,7 @@ namespace BuilderView.File
             {
                 Plugin plugin = Plugin.LocatePlugin(selectedPlugin);
                 textBoxDescription.Text = plugin.description;
+                pluginControl.appendPluginInfo(plugin);
             }
 
         }

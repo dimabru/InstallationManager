@@ -16,12 +16,19 @@ namespace HelperLibrary.Plugins
         {
             name = Name;
             description = desc;
+            insertions = new List<InsertionValueHelper>();
+        }
+
+        public void updateInsertion(string label, string value)
+        {
+            
         }
 
         public static List<Plugin> PluginList = new List<Plugin>();
 
         public static void LoadPlugins()
         {
+            PluginList.Clear();
             Type[] types = Utils.GetTypesInNamespace("Plugin", "HelperLibrary.Plugins");
 
             foreach (Type type in types)

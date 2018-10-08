@@ -13,9 +13,12 @@ namespace BuilderView.File
 {
     public partial class PluginControl : UserControl
     {
+        private List<Control> inputControls { get; set; }
         public PluginControl()
         {
             InitializeComponent();
+
+            inputControls = new List<Control>();
         }
 
         public void setPluginStatus(bool visible)
@@ -27,23 +30,55 @@ namespace BuilderView.File
         {
             setPluginStatus(visible: false);
 
-            TextBox text = new TextBox();
+            foreach (InsertionValueHelper insertionValue in plugin.insertions)
+            {
+                Control input;
 
-            text.Name = "labelSelectPlugin";
-            text.Text = "";
-            text.Left = (Width - text.Width) / 2;
-            text.Top = (Height - text.Height) / 2;
-            text.Dock = DockStyle.Top;
-            TextBox text1 = new TextBox();
+                if (insertionValue.input == InsertionValueHelper.InputType.TextBox)
+                {
+                    input = new TextBox();
+                }
+                else if (insertionValue.input == InsertionValueHelper.InputType.ComboBox)
+                {
+                    input = new ComboBox();
+                }
+                else
+                {
+                    input = new Control();
+                }
+                int pluginHeight = Height / (plugin.insertions.Count + 1) * (plugin.insertions.IndexOf(insertionValue) + 1);
 
-            text1.Name = "labelSelectPlugin1";
-            text1.Text = "";
-            text1.Left = (Width - text1.Width) / 2;
-            text1.Top = (Height - text1.Height) / 2;
-            text1.Dock = DockStyle.Top;
-            Controls.Add(text);
-            Controls.Add(text1);
+                Label label = new Label();
+                label.Text = insertionValue.label;
+                label.Left = (Width - label.Width) / 5;
+                label.Top = pluginHeight;
+                input.Left = (Width - input.Width) / 2;
+                input.Top = pluginHeight;
+
+                Controls.Add(input);
+                Controls.Add(label);
+                inputControls.Add(input);
+            }
         }
 
+        public bool filledInputs()
+        {
+            foreach (Control control in inputControls)
+            {
+                if (String.IsNullOrEmpty(control.Text))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void resetInputs()
+        {
+            foreach (Control control in inputControls)
+            {
+                control.Text = String.Empty;
+            }
+        }
     }
 }

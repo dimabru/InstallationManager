@@ -23,6 +23,8 @@ namespace HelperLibrary.Plugins
         private void populateInsertions()
         {
             InsertionValueHelper insert = new InsertionValueHelper(InsertionValueHelper.InputType.TextBox, "Enter a command to run");
+
+            insertions.Add(insert);
         }
 
     }
