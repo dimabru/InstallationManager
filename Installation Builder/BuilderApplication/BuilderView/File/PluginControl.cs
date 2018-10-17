@@ -13,12 +13,12 @@ namespace BuilderView.File
 {
     public partial class PluginControl : UserControl
     {
-        private List<Control> inputControls { get; set; }
+        public Dictionary<string, Control> inputDict { get; set; }
         public PluginControl()
         {
             InitializeComponent();
 
-            inputControls = new List<Control>();
+            inputDict = new Dictionary<string, Control>();
         }
 
         public void setPluginStatus(bool visible)
@@ -57,15 +57,15 @@ namespace BuilderView.File
 
                 Controls.Add(input);
                 Controls.Add(label);
-                inputControls.Add(input);
+                inputDict[label.Text] = input;
             }
         }
 
         public bool filledInputs()
         {
-            foreach (Control control in inputControls)
+            foreach (string label in inputDict.Keys)
             {
-                if (String.IsNullOrEmpty(control.Text))
+                if (String.IsNullOrEmpty(inputDict[label].Text))
                 {
                     return false;
                 }
@@ -73,9 +73,9 @@ namespace BuilderView.File
             return true;
         }
 
-        public void resetInputs()
+        public void resetInputs(Plugin plugin)
         {
-            foreach (Control control in inputControls)
+            foreach (Control control in inputDict.Values)
             {
                 control.Text = String.Empty;
             }

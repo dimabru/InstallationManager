@@ -6,7 +6,7 @@ namespace HelperLibrary.Plugins
 {
     public class RunCmd : Plugin
     {
-        public string command { get; set; }
+        public string command { get; private set; }
 
         public RunCmd(string cmd) : base(desc: "Execute a cmd.exe command", Name: "Run Command")
         {

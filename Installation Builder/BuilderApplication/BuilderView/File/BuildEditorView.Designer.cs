@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuildEditorView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.labelChoosePlugin = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.buttonEditTask = new System.Windows.Forms.Button();
@@ -48,13 +49,13 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(16, 15);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 12);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonSave);
             this.splitContainer1.Panel1.Controls.Add(this.labelChoosePlugin);
             this.splitContainer1.Panel1.Controls.Add(this.labelDescription);
             this.splitContainer1.Panel1.Controls.Add(this.buttonEditTask);
@@ -68,48 +69,55 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pluginControl);
-            this.splitContainer1.Size = new System.Drawing.Size(829, 452);
-            this.splitContainer1.SplitterDistance = 246;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(622, 367);
+            this.splitContainer1.SplitterDistance = 199;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Enabled = false;
+            this.buttonSave.Location = new System.Drawing.Point(358, 163);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(63, 23);
+            this.buttonSave.TabIndex = 12;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // labelChoosePlugin
             // 
             this.labelChoosePlugin.AutoSize = true;
-            this.labelChoosePlugin.Location = new System.Drawing.Point(31, 15);
-            this.labelChoosePlugin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelChoosePlugin.Location = new System.Drawing.Point(23, 12);
             this.labelChoosePlugin.Name = "labelChoosePlugin";
-            this.labelChoosePlugin.Size = new System.Drawing.Size(99, 17);
+            this.labelChoosePlugin.Size = new System.Drawing.Size(75, 13);
             this.labelChoosePlugin.TabIndex = 11;
             this.labelChoosePlugin.Text = "Choose Plugin";
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(27, 86);
-            this.labelDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDescription.Location = new System.Drawing.Point(20, 70);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(79, 17);
+            this.labelDescription.Size = new System.Drawing.Size(60, 13);
             this.labelDescription.TabIndex = 10;
             this.labelDescription.Text = "Description";
             // 
             // buttonEditTask
             // 
-            this.buttonEditTask.Location = new System.Drawing.Point(477, 107);
-            this.buttonEditTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditTask.Location = new System.Drawing.Point(358, 87);
             this.buttonEditTask.Name = "buttonEditTask";
-            this.buttonEditTask.Size = new System.Drawing.Size(84, 28);
+            this.buttonEditTask.Size = new System.Drawing.Size(63, 23);
             this.buttonEditTask.TabIndex = 9;
             this.buttonEditTask.Text = "Edit";
             this.buttonEditTask.UseVisualStyleBackColor = true;
             this.buttonEditTask.Visible = false;
+            this.buttonEditTask.Click += new System.EventHandler(this.buttonEditTask_Click);
             // 
             // buttonAddTask
             // 
-            this.buttonAddTask.Location = new System.Drawing.Point(477, 57);
-            this.buttonAddTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddTask.Location = new System.Drawing.Point(358, 46);
             this.buttonAddTask.Name = "buttonAddTask";
-            this.buttonAddTask.Size = new System.Drawing.Size(84, 28);
+            this.buttonAddTask.Size = new System.Drawing.Size(63, 23);
             this.buttonAddTask.TabIndex = 8;
             this.buttonAddTask.Text = "Add Task";
             this.buttonAddTask.UseVisualStyleBackColor = true;
@@ -117,38 +125,34 @@
             // 
             // textBoxTaskName
             // 
-            this.textBoxTaskName.Location = new System.Drawing.Point(427, 25);
-            this.textBoxTaskName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTaskName.Location = new System.Drawing.Point(320, 20);
             this.textBoxTaskName.Name = "textBoxTaskName";
-            this.textBoxTaskName.Size = new System.Drawing.Size(133, 22);
+            this.textBoxTaskName.Size = new System.Drawing.Size(101, 20);
             this.textBoxTaskName.TabIndex = 0;
             this.textBoxTaskName.Text = "Task name";
             // 
             // treeViewPlugins
             // 
             this.treeViewPlugins.HideSelection = false;
-            this.treeViewPlugins.Location = new System.Drawing.Point(569, 25);
-            this.treeViewPlugins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeViewPlugins.Location = new System.Drawing.Point(427, 20);
             this.treeViewPlugins.Name = "treeViewPlugins";
-            this.treeViewPlugins.Size = new System.Drawing.Size(255, 203);
+            this.treeViewPlugins.Size = new System.Drawing.Size(192, 166);
             this.treeViewPlugins.TabIndex = 7;
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(27, 110);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDescription.Location = new System.Drawing.Point(20, 89);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.Size = new System.Drawing.Size(372, 118);
+            this.textBoxDescription.Size = new System.Drawing.Size(280, 97);
             this.textBoxDescription.TabIndex = 6;
             // 
             // buttonAddPlugin
             // 
-            this.buttonAddPlugin.Location = new System.Drawing.Point(223, 36);
-            this.buttonAddPlugin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddPlugin.Location = new System.Drawing.Point(167, 29);
             this.buttonAddPlugin.Name = "buttonAddPlugin";
-            this.buttonAddPlugin.Size = new System.Drawing.Size(100, 28);
+            this.buttonAddPlugin.Size = new System.Drawing.Size(75, 23);
             this.buttonAddPlugin.TabIndex = 4;
             this.buttonAddPlugin.Text = "Add";
             this.buttonAddPlugin.UseVisualStyleBackColor = true;
@@ -163,10 +167,9 @@
             "Action Provider2",
             "Action Provider3",
             "Action Provider4"});
-            this.comboBoxChoosePlugin.Location = new System.Drawing.Point(27, 38);
-            this.comboBoxChoosePlugin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxChoosePlugin.Location = new System.Drawing.Point(20, 31);
             this.comboBoxChoosePlugin.Name = "comboBoxChoosePlugin";
-            this.comboBoxChoosePlugin.Size = new System.Drawing.Size(187, 24);
+            this.comboBoxChoosePlugin.Size = new System.Drawing.Size(141, 21);
             this.comboBoxChoosePlugin.TabIndex = 3;
             this.comboBoxChoosePlugin.SelectedIndexChanged += new System.EventHandler(this.updatePlugin);
             // 
@@ -174,20 +177,21 @@
             // 
             this.pluginControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pluginControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pluginControl.inputDict = ((System.Collections.Generic.Dictionary<string, System.Windows.Forms.Control>)(resources.GetObject("pluginControl.inputDict")));
             this.pluginControl.Location = new System.Drawing.Point(0, 0);
-            this.pluginControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pluginControl.Margin = new System.Windows.Forms.Padding(4);
             this.pluginControl.Name = "pluginControl";
-            this.pluginControl.Size = new System.Drawing.Size(829, 201);
+            this.pluginControl.Size = new System.Drawing.Size(622, 164);
             this.pluginControl.TabIndex = 0;
             // 
             // BuildEditorView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(861, 497);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(646, 404);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.MinimumSize = new System.Drawing.Size(289, 384);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(221, 319);
             this.Name = "BuildEditorView";
             this.Text = "Build Editor";
             this.Controls.SetChildIndex(this.splitContainer1, 0);
@@ -214,5 +218,6 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelChoosePlugin;
         private PluginControl pluginControl;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

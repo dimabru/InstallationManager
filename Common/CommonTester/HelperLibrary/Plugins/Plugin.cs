@@ -11,17 +11,27 @@ namespace HelperLibrary.Plugins
         public string name { get; }
         public string description { get; }
         public List<InsertionValueHelper> insertions { get; set; }
+        public Dictionary<InsertionValueHelper, string> valueDict { get; set; }
 
         public Plugin(string desc, string Name)
         {
             name = Name;
             description = desc;
             insertions = new List<InsertionValueHelper>();
+            valueDict = new Dictionary<InsertionValueHelper, string>();
         }
 
         public void updateInsertion(string label, string value)
         {
-            
+            foreach(InsertionValueHelper insert in insertions)
+            {
+                if (insert.label == label)
+                {
+                    valueDict[insert] = value;
+                    return;
+                }
+            }
+            throw new InvalidOperationException($"Unable to locate value with label {label} in the list");
         }
 
         public static List<Plugin> PluginList = new List<Plugin>();

@@ -39,6 +39,7 @@ namespace BuilderView.File
             }
 
             treeViewPlugins.Nodes.Add(task);
+            checkSaveButton();
         }
 
         private bool taskExists(string task)
@@ -68,7 +69,7 @@ namespace BuilderView.File
         {
             string pluginName = comboBoxChoosePlugin.Text;
 
-            if (string.IsNullOrEmpty(plugin))
+            if (string.IsNullOrEmpty(pluginName))
             {
                 return;
             }
@@ -82,7 +83,11 @@ namespace BuilderView.File
                 treeViewPlugins.SelectedNode.Nodes.Add(pluginName);
                 Plugin plugin = Plugin.LocatePlugin(pluginName);
                 
-                pluginControl.resetInputs();
+                foreach(string label in pluginControl.inputDict.Keys)
+                {
+                    plugin.updateInsertion(label, pluginControl.inputDict[label].Text);
+                }
+                pluginControl.resetInputs(plugin);
             }
             else
             {
@@ -114,6 +119,28 @@ namespace BuilderView.File
                 textBoxDescription.Text = plugin.description;
                 pluginControl.appendPluginInfo(plugin);
             }
+
+        }
+
+        private void buttonEditTask_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkSaveButton()
+        {
+            if (this.treeViewPlugins.Nodes.Count != 0)
+            {
+                buttonSave.Enabled = true;
+            }
+            else
+            {
+                buttonSave.Enabled = false;
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
 
         }
     }
