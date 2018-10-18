@@ -41,5 +41,10 @@ namespace HelperLibrary
         {
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static void NoticeMessage(string message)
+        {
+            MessageBox.Show(message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

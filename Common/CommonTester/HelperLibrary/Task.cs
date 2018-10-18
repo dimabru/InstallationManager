@@ -8,14 +8,17 @@ namespace HelperLibrary
     public class Task
     {
         public List<Plugin> plugins { get; set; }
+        public string name { get; set; }
 
-        public Task(List<Plugin> plugs)
+        public Task(string n, List<Plugin> plugs)
         {
+            name = n;
             plugins = plugs;
         }
 
-        public Task()
+        public Task(string n)
         {
+            name = n;
             plugins = new List<Plugin>();
         }
 

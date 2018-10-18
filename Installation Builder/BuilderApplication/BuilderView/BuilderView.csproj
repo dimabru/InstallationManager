@@ -52,6 +52,12 @@
     <Compile Include="BMainForm.Designer.cs">
       <DependentUpon>BMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="File\BuildDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File\BuildDetailsView.Designer.cs">
+      <DependentUpon>BuildDetailsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="File\BuildEditorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BMainForm.resx">
       <DependentUpon>BMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\BuildDetailsView.resx">
+      <DependentUpon>BuildDetailsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="File\BuildEditorView.resx">
       <DependentUpon>BuildEditorView.cs</DependentUpon>

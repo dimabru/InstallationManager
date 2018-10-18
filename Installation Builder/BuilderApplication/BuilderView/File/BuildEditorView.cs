@@ -20,25 +20,29 @@ namespace BuilderView.File
 {
     public partial class BuildEditorView : BaseView.BaseMainForm
     {
+        private List<Task> tasks { get; set; }
 
         public BuildEditorView()
         {
             InitializeComponent();
-
+            tasks = new List<Task>();
             populatePlugins();
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)
         {
-            string task = textBoxTaskName.Text;
+            string taskName = textBoxTaskName.Text;
 
-            if (taskExists(task))
+            if (taskExists(taskName))
             {
                 Dialogs.ErrorMessage("Task already exist. Please enter a different name");
                 return;
             }
 
-            treeViewPlugins.Nodes.Add(task);
+            Task task = new Task(textBoxTaskName.Text);
+            tasks.Add(task);
+
+            treeViewPlugins.Nodes.Add(taskName);
             checkSaveButton();
         }
 
@@ -87,6 +91,11 @@ namespace BuilderView.File
                 {
                     plugin.updateInsertion(label, pluginControl.inputDict[label].Text);
                 }
+
+                string taskName = treeViewPlugins.SelectedNode.Text;
+                Task task = tasks.Find(t => t.name == taskName);
+                task.addPlugin(plugin);
+
                 pluginControl.resetInputs(plugin);
             }
             else
@@ -141,7 +150,7 @@ namespace BuilderView.File
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-
+            new BuildDetailsView(tasks).ShowDialog();
         }
     }
 }
