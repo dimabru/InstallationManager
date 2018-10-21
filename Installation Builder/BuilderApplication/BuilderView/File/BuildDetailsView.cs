@@ -1,4 +1,5 @@
-﻿using HelperLibrary;
+﻿using BuilderEngine;
+using HelperLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,13 @@ namespace BuilderView.File
 {
     public partial class BuildDetailsView : Form
     {
-        public BuildDetailsView(List<Task> tasks)
+        List<Task> tasks;
+
+        public BuildDetailsView(List<Task> tsks)
         {
             InitializeComponent();
+
+            tasks = tsks;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -35,7 +40,15 @@ namespace BuilderView.File
                 return;
             }
 
-            Dialogs.NoticeMessage("Build save succesfully");
+            string buildName = textBoxName.Text;
+            string description = richTextBoxDescription.Text;
+            string path = BasicInfo.BuildsLocation + "\\" + buildName;
+
+            Build build = new Build(buildName, path ,description);
+            build.addTasks(tasks);
+            build.save();
+
+            Dialogs.NoticeMessage("Build saved succesfully");
             this.Close();
         }
     }

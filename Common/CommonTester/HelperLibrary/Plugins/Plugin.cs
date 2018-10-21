@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace HelperLibrary.Plugins
 {
@@ -61,6 +62,24 @@ namespace HelperLibrary.Plugins
                 }
             }
             return null;
+        }
+
+        public XElement Save()
+        {
+            XElement pluginElement = new XElement("Plugin");
+            pluginElement.Add(new XAttribute("Name", name));
+
+            foreach (InsertionValueHelper insert in insertions)
+            {
+                XElement inputValue = new XElement("Input");
+                inputValue.Add(new XAttribute("Type", insert.input));
+                inputValue.Add(new XAttribute("Label", insert.label));
+                inputValue.Add(new XAttribute("Value", valueDict[insert]));
+
+                pluginElement.Add(inputValue);
+            }
+
+            return pluginElement;
         }
     }
 

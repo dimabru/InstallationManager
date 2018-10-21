@@ -1,4 +1,5 @@
-﻿using HelperLibrary;
+﻿using BuilderEngine;
+using HelperLibrary;
 using HelperLibrary.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,11 @@ namespace HelperLibrary
         public List<Build> builds { get; set; }
 
         public XMLBuilds(string path) : base(path)
+        {
+            populateBuilds();
+        }
+
+        public XMLBuilds() : base(BasicInfo.BuildsInfoLocation)
         {
             populateBuilds();
         }
@@ -40,12 +46,39 @@ namespace HelperLibrary
             {
                 string name = element.Attribute("Name").Value;
                 string path = element.Attribute("Path").Value;
-
-                XElement descriptionElem = element.Element("Description");
-                string description = descriptionElem.Value;
+                string description = element.Attribute("Description").Value;
 
                 builds.Add(new Build(name, path, description));
             }
+        }
+
+        public void addBuild(Build build)
+        {
+            builds.Add(build);
+        }
+
+        public void Save()
+        {
+            XDocument buildsXml = new XDocument();
+            XElement buildsElement = new XElement("Builds");
+
+            foreach (Build build in builds)
+            {
+                XElement buildElement = new XElement("Build");
+                buildElement.Add(new XAttribute("Name", build.name));
+                buildElement.Add(new XAttribute("Path", build.path));
+                buildElement.Add(new XAttribute("Description", build.description));
+
+                buildsElement.Add(buildElement);
+            }
+            buildsXml.Add(buildsElement);
+
+            buildsXml.Save(xmlPath);
+        }
+
+        public string getDescription(string buildName)
+        {
+            return builds.Find(b => b.name == buildName).description; 
         }
     }
 }

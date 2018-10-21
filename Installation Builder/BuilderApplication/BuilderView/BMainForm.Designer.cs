@@ -71,21 +71,21 @@
             // createNewBuildtoolStripMenuItem
             // 
             this.createNewBuildtoolStripMenuItem.Name = "createNewBuildtoolStripMenuItem";
-            this.createNewBuildtoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createNewBuildtoolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.createNewBuildtoolStripMenuItem.Text = "Create New Build";
             this.createNewBuildtoolStripMenuItem.Click += new System.EventHandler(this.createNewBuildtoolStripMenuItem_Click);
             // 
             // propertiesToolStripMenuItem
             // 
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -120,6 +120,7 @@
             this.listViewCurrentBuilds.Size = new System.Drawing.Size(150, 146);
             this.listViewCurrentBuilds.TabIndex = 3;
             this.listViewCurrentBuilds.UseCompatibleStateImageBehavior = false;
+            this.listViewCurrentBuilds.SelectedIndexChanged += new System.EventHandler(this.LoadDescription);
             // 
             // labelDescription
             // 

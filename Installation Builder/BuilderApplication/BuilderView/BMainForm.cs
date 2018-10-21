@@ -61,5 +61,26 @@ namespace BuilderView
         {
             new BuildEditorView().ShowDialog();
         }
+
+        private void LoadDescription(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedBuild = listViewCurrentBuilds.SelectedItems[0].Text;
+                richTextBoxDescription.Text = String.Empty;
+
+                if (string.IsNullOrEmpty(selectedBuild))
+                {
+                    return;
+                }
+
+                string description = buildsInfo.getDescription(selectedBuild);
+                richTextBoxDescription.Text = description;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 namespace HelperLibrary
 {
@@ -25,6 +26,19 @@ namespace HelperLibrary
         public void addPlugin(Plugin plugin)
         {
             plugins.Add(plugin);
+        }
+
+        public XElement Save()
+        {
+            XElement taskElement = new XElement("Task");
+            taskElement.Add(new XAttribute("Name", name));
+
+            foreach (Plugin plugin in plugins)
+            {
+                taskElement.Add(plugin.Save());
+            }
+
+            return taskElement;
         }
     }
 }
