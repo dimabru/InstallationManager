@@ -1,6 +1,0 @@
-DeleteFiles.exe Path\To\File1 ...
-
-Config.xml
-Name: Delete Files
-Description: ...
-Insertion Values: Browse and select 1 or more files.
