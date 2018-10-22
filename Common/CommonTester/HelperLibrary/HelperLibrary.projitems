@@ -20,7 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Plugins\RunCmd.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Task.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)XMLBuildEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XMLBuild.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLBuilds.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLFile.cs" />
   </ItemGroup>

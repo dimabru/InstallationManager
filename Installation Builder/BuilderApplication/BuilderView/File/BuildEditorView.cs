@@ -21,11 +21,22 @@ namespace BuilderView.File
     public partial class BuildEditorView : BaseView.BaseMainForm
     {
         private List<Task> tasks { get; set; }
+        public Build build { get; set; }
+        string buildName = string.Empty;
 
         public BuildEditorView()
         {
             InitializeComponent();
             tasks = new List<Task>();
+            populatePlugins();
+        }
+
+        public BuildEditorView(List<Task> tsks, string name)
+        {
+            InitializeComponent();
+
+            tasks = tsks;
+            this.Name = name;
             populatePlugins();
         }
 

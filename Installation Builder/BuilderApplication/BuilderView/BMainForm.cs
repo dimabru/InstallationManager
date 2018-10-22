@@ -82,5 +82,15 @@ namespace BuilderView
                 return;
             }
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (listViewCurrentBuilds.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+
+        }
     }
 }
