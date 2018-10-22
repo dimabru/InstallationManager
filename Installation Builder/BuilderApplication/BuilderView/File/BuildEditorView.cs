@@ -23,6 +23,7 @@ namespace BuilderView.File
         private List<Task> tasks { get; set; }
         public Build build { get; set; }
         string buildName = string.Empty;
+        string buildDescription = String.Empty;
 
         public BuildEditorView()
         {
@@ -31,13 +32,31 @@ namespace BuilderView.File
             populatePlugins();
         }
 
-        public BuildEditorView(List<Task> tsks, string name)
+        public BuildEditorView(List<Task> tsks, string name, string desc)
         {
             InitializeComponent();
 
             tasks = tsks;
             this.Name = name;
+            buildDescription = desc;
+            buildName = name;
             populatePlugins();
+            populateTree();
+            treeViewPlugins.ExpandAll();
+        }
+
+        private void populateTree()
+        {
+            foreach (Task task in tasks)
+            {
+                TreeNode taskNode = new TreeNode(task.name);
+
+                foreach (Plugin plugin in task.plugins)
+                {
+                    taskNode.Nodes.Add(plugin.name);
+                }
+                treeViewPlugins.Nodes.Add(taskNode);
+            }
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)
@@ -161,7 +180,7 @@ namespace BuilderView.File
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            new BuildDetailsView(tasks).ShowDialog();
+            new BuildDetailsView(tasks, buildName, buildDescription).ShowDialog();
         }
     }
 }

@@ -15,11 +15,13 @@ namespace BuilderView.File
     {
         List<Task> tasks;
 
-        public BuildDetailsView(List<Task> tsks)
+        public BuildDetailsView(List<Task> tsks, string name, string description)
         {
             InitializeComponent();
 
             tasks = tsks;
+            textBoxName.Text = name;
+            richTextBoxDescription.Text = description;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

@@ -22,6 +22,14 @@ namespace HelperLibrary.Plugins
             valueDict = new Dictionary<InsertionValueHelper, string>();
         }
 
+        public Plugin(string Name)
+        {
+            name = Name;
+            description = "";
+            insertions = new List<InsertionValueHelper>();
+            valueDict = new Dictionary<InsertionValueHelper, string>();
+        }
+
         public void updateInsertion(string label, string value)
         {
             foreach(InsertionValueHelper insert in insertions)

@@ -90,7 +90,12 @@ namespace BuilderView
                 return;
             }
 
+            string buildName = listViewCurrentBuilds.SelectedItems[0].Text;
+            string buildPath = buildsInfo.getBuildPath(buildName);
+            string buildDescription = richTextBoxDescription.Text;
 
+            XMLBuild xmlBuild = new XMLBuild(buildPath + "\\" + DefaultInfo.BuildDetailsFileName);
+            new BuildEditorView(xmlBuild.tasks, buildName, buildDescription).ShowDialog();
         }
     }
 }

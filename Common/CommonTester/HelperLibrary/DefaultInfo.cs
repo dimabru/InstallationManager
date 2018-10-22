@@ -14,6 +14,7 @@ namespace HelperLibrary
         public static string DefaultPath = $"{MyDocumentsPath}\\{FolderName}";
         public static string BuildsConfigLocation = $".\\Config.xml";
         public static string BuildsDefaultConfigFileLocation = $".\\OutFiles\\BuilderDefaultConfig.xml";
+        public static string BuildDetailsFileName = "BuildDetails.xml";
         public static string ProjectLocation
         {
             get

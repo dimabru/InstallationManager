@@ -80,5 +80,15 @@ namespace HelperLibrary
         {
             return builds.Find(b => b.name == buildName).description; 
         }
+
+        public Build getBuild(string buildName)
+        {
+            return builds.Find(b => b.name == buildName);
+        }
+
+        public string getBuildPath(string buildName)
+        {
+            return builds.Find(b => b.name == buildName).path;
+        }
     }
 }
