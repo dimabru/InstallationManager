@@ -15,41 +15,48 @@ namespace DeleteFilesPlugin
         // Notify.log
         static void Main(string[] args)
         {
+            args = Console.ReadLine().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             if (args.ToList().Count == 0)
             {
-                Logger.LogError("No files to delete");
+                Logger.LogError("No files to delete\n");
                 return;
             }
             List<string> notRemovedFiles = new List<string>();
             foreach (string arg in args)
             {
-                FileAttributes attr = File.GetAttributes(arg);
-                if (!attr.HasFlag(FileAttributes.Directory))
+                try
                 {
-                    Logger.LogNotify($"Deleting file {arg}");
-                    try
+                    FileAttributes attr = File.GetAttributes(arg);
+                    if (!attr.HasFlag(FileAttributes.Directory))
                     {
-                        File.Delete(arg);
-                    }
-                    catch ()
-                    {
-                        notRemovedFiles.Add(arg);
-                        Logger.LogError($"Unable to delete file {arg} because...");
-                    }
-                    catch ()
-                    {
-                        Logger.LogError($"Unable to delete file {arg} because...");
+                        Logger.LogNotify($"Deleting file {arg}");
+                        try
+                        {
+                            File.Delete(arg);
+                        }
+                        //should be our own created exeption(for example - administrator permissions)
+                        catch (IOException ex)
+                        {
+                            notRemovedFiles.Add(arg);
+                            Logger.LogError($"Unable to delete file {arg} because {ex}");
+                        }
                     }
                 }
-
+                catch (FileNotFoundException Fex)
+                {
+                    Logger.LogError($"Unable to delete file {arg} because {Fex}");
+                }
             }
             // If not all files were removed
             if (notRemovedFiles.Any())
             {
-                Logger.LogWarning("The following were not removed");
+                foreach (string notRmv in notRemovedFiles)
+                {
+                    Logger.LogWarning($"The following were not removed {notRmv}");
+                }
             }
             // else
-            Logger.LogNotify("Process completed ");
+            else Logger.LogNotify(" - Process completed \n");
         }
     }
 }

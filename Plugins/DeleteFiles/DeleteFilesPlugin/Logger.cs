@@ -11,18 +11,18 @@ namespace DeleteFilesPlugin
     {
         public static void LogError(string msg)
         {
-            File.AppendAllText(".\\Error.log", msg);
+            File.AppendAllText(".\\Error.log", msg + Environment.NewLine);
         }
 
         public static void LogWarning(string msg)
         {
-            File.AppendAllText(".\\Warning.log", msg);
+            File.AppendAllText(".\\Warning.log", msg + Environment.NewLine);
 
         }
 
         public static void LogNotify(string msg)
         {
-            File.AppendAllText(".\\Notify.log", msg);
+            File.AppendAllText(".\\Notify.log", msg + Environment.NewLine);
 
         }
     }
