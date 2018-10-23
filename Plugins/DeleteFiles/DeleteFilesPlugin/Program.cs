@@ -33,17 +33,18 @@ namespace DeleteFilesPlugin
                         {
                             File.Delete(arg);
                         }
-                        //should be our own created exeption(for example - administrator permissions)
-                        catch (IOException ex)
+                        //should be our own created exeption(for example - administrator permissions) - still not finished
+                        catch (IOException)
                         {
                             notRemovedFiles.Add(arg);
-                            Logger.LogError($"Unable to delete file {arg} because {ex}");
+                            Logger.LogError($"Unable to delete file {arg} because the user does not have a permission to delete the file");
                         }
                     }
                 }
-                catch (FileNotFoundException Fex)
+                catch (FileNotFoundException)
                 {
-                    Logger.LogError($"Unable to delete file {arg} because {Fex}");
+                    Logger.LogError($"Unable to delete file {arg} because the file does not exist!");
+                    return;
                 }
             }
             // If not all files were removed
@@ -53,6 +54,7 @@ namespace DeleteFilesPlugin
                 {
                     Logger.LogWarning($"The following were not removed {notRmv}");
                 }
+                return;
             }
             // else
             else Logger.LogNotify(" - Process completed \n");
