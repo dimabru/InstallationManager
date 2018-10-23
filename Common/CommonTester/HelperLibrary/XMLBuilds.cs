@@ -54,6 +54,12 @@ namespace HelperLibrary
 
         public void addBuild(Build build)
         {
+            try
+            {
+                // check if build exists in the list
+                builds.Remove(builds.Find(b => b.name == build.name));
+            }
+            catch (ArgumentNullException) { }
             builds.Add(build);
         }
 

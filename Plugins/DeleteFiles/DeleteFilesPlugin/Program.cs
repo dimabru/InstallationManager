@@ -15,7 +15,6 @@ namespace DeleteFilesPlugin
         // Notify.log
         static void Main(string[] args)
         {
-            args = Console.ReadLine().Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             if (args.ToList().Count == 0)
             {
                 Logger.LogError("No files to delete\n");

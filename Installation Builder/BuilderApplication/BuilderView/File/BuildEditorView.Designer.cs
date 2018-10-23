@@ -40,6 +40,9 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonAddPlugin = new System.Windows.Forms.Button();
             this.comboBoxChoosePlugin = new System.Windows.Forms.ComboBox();
+            this.buttonMoveUp = new System.Windows.Forms.Button();
+            this.buttonMoveDown = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.pluginControl = new BuilderView.File.PluginControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -58,7 +61,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.buttonSave);
             this.splitContainer1.Panel1.Controls.Add(this.labelChoosePlugin);
             this.splitContainer1.Panel1.Controls.Add(this.labelDescription);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonEditTask);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAddTask);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxTaskName);
             this.splitContainer1.Panel1.Controls.Add(this.treeViewPlugins);
@@ -104,7 +106,7 @@
             // 
             // buttonEditTask
             // 
-            this.buttonEditTask.Location = new System.Drawing.Point(358, 87);
+            this.buttonEditTask.Location = new System.Drawing.Point(632, 32);
             this.buttonEditTask.Name = "buttonEditTask";
             this.buttonEditTask.Size = new System.Drawing.Size(63, 23);
             this.buttonEditTask.TabIndex = 9;
@@ -138,6 +140,7 @@
             this.treeViewPlugins.Name = "treeViewPlugins";
             this.treeViewPlugins.Size = new System.Drawing.Size(192, 166);
             this.treeViewPlugins.TabIndex = 7;
+            this.treeViewPlugins.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.validTreeButtons);
             // 
             // textBoxDescription
             // 
@@ -173,6 +176,38 @@
             this.comboBoxChoosePlugin.TabIndex = 3;
             this.comboBoxChoosePlugin.SelectedIndexChanged += new System.EventHandler(this.updatePlugin);
             // 
+            // buttonMoveUp
+            // 
+            this.buttonMoveUp.Location = new System.Drawing.Point(632, 58);
+            this.buttonMoveUp.Name = "buttonMoveUp";
+            this.buttonMoveUp.Size = new System.Drawing.Size(63, 23);
+            this.buttonMoveUp.TabIndex = 13;
+            this.buttonMoveUp.Text = "Move Up";
+            this.buttonMoveUp.UseVisualStyleBackColor = true;
+            this.buttonMoveUp.Visible = false;
+            // 
+            // buttonMoveDown
+            // 
+            this.buttonMoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMoveDown.Location = new System.Drawing.Point(632, 82);
+            this.buttonMoveDown.Name = "buttonMoveDown";
+            this.buttonMoveDown.Size = new System.Drawing.Size(63, 34);
+            this.buttonMoveDown.TabIndex = 14;
+            this.buttonMoveDown.Text = "Move Down";
+            this.buttonMoveDown.UseVisualStyleBackColor = true;
+            this.buttonMoveDown.Visible = false;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(632, 122);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(63, 23);
+            this.buttonDelete.TabIndex = 15;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // pluginControl
             // 
             this.pluginControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -187,14 +222,22 @@
             // BuildEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(646, 404);
+            this.ClientSize = new System.Drawing.Size(695, 404);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonMoveDown);
             this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.buttonMoveUp);
+            this.Controls.Add(this.buttonEditTask);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(221, 319);
             this.Name = "BuildEditorView";
             this.Text = "Build Editor";
+            this.Controls.SetChildIndex(this.buttonEditTask, 0);
+            this.Controls.SetChildIndex(this.buttonMoveUp, 0);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
+            this.Controls.SetChildIndex(this.buttonMoveDown, 0);
+            this.Controls.SetChildIndex(this.buttonDelete, 0);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -219,5 +262,8 @@
         private System.Windows.Forms.Label labelChoosePlugin;
         private PluginControl pluginControl;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonMoveDown;
+        private System.Windows.Forms.Button buttonMoveUp;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

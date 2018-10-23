@@ -47,6 +47,8 @@ namespace BuilderView.File
 
         private void populateTree()
         {
+            treeViewPlugins.Nodes.Clear();
+
             foreach (Task task in tasks)
             {
                 TreeNode taskNode = new TreeNode(task.name);
@@ -57,6 +59,9 @@ namespace BuilderView.File
                 }
                 treeViewPlugins.Nodes.Add(taskNode);
             }
+
+            treeViewPlugins.ExpandAll();
+            checkSaveButton();
         }
 
         private void buttonAddTask_Click(object sender, EventArgs e)
@@ -163,7 +168,8 @@ namespace BuilderView.File
 
         private void buttonEditTask_Click(object sender, EventArgs e)
         {
-
+            string name = treeViewPlugins.SelectedNode.Text;
+            new EditNameView(name, this).ShowDialog();
         }
 
         private void checkSaveButton()
@@ -181,6 +187,50 @@ namespace BuilderView.File
         private void buttonSave_Click(object sender, EventArgs e)
         {
             new BuildDetailsView(tasks, buildName, buildDescription).ShowDialog();
+        }
+
+        private void validTreeButtons(object sender, TreeViewEventArgs e)
+        {
+            TreeNode selected = treeViewPlugins.SelectedNode;
+            if (selected.Level == 0)
+            {
+                buttonEditTask.Visible = true;
+            }
+            else
+            {
+                buttonEditTask.Visible = false;
+            }
+            buttonMoveDown.Visible = true;
+            buttonMoveUp.Visible = true;
+            buttonDelete.Visible = true;
+        }
+
+        public void updateTaskName(string oldName, string newName)
+        {
+            Task locate = tasks.Find(t => t.name == oldName);
+            locate.name = newName;
+            populateTree();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            TreeNode selected = treeViewPlugins.SelectedNode;
+            // Selected node is a task
+            if (selected.Level == 0)
+            {
+                tasks.RemoveAll(t => t.name == selected.Text);
+            }
+            // Selected node is a plugin
+            else
+            {
+                int taskIndex = selected.Parent.Index;
+                Task editTask = tasks.ElementAt(taskIndex);
+                int pluginIndex = selected.Index;
+                Plugin toRemove = editTask.plugins.ElementAt(pluginIndex);
+                editTask.plugins.Remove(toRemove);
+            }
+
+            populateTree();
         }
     }
 }

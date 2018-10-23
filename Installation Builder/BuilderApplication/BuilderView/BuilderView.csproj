@@ -64,6 +64,12 @@
     <Compile Include="File\BuildEditorView.Designer.cs">
       <DependentUpon>BuildEditorView.cs</DependentUpon>
     </Compile>
+    <Compile Include="File\EditNameView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="File\EditNameView.Designer.cs">
+      <DependentUpon>EditNameView.cs</DependentUpon>
+    </Compile>
     <Compile Include="File\PluginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="File\BuildEditorView.resx">
       <DependentUpon>BuildEditorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="File\EditNameView.resx">
+      <DependentUpon>EditNameView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="File\PluginControl.resx">
       <DependentUpon>PluginControl.cs</DependentUpon>
