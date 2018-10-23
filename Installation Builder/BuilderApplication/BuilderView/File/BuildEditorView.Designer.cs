@@ -185,6 +185,7 @@
             this.buttonMoveUp.Text = "Move Up";
             this.buttonMoveUp.UseVisualStyleBackColor = true;
             this.buttonMoveUp.Visible = false;
+            this.buttonMoveUp.Click += new System.EventHandler(this.buttonMoveUp_Click);
             // 
             // buttonMoveDown
             // 
@@ -196,6 +197,7 @@
             this.buttonMoveDown.Text = "Move Down";
             this.buttonMoveDown.UseVisualStyleBackColor = true;
             this.buttonMoveDown.Visible = false;
+            this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
             // 
             // buttonDelete
             // 

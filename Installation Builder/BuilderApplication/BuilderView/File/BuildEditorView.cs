@@ -232,5 +232,113 @@ namespace BuilderView.File
 
             populateTree();
         }
+
+        private void buttonMoveUp_Click(object sender, EventArgs e)
+        {
+            if (treeViewPlugins.SelectedNode == null)
+            {
+                return;
+            }
+            if (treeViewPlugins.SelectedNode.Level == 0)
+            {
+                moveTasks(moveUp: true);
+            }
+            else
+            {
+                movePlugins(moveUp: true);
+            }
+
+            populateTree();
+        }
+
+        private void buttonMoveDown_Click(object sender, EventArgs e)
+        {
+            if (treeViewPlugins.SelectedNode == null)
+            {
+                return;
+            }
+            if (treeViewPlugins.SelectedNode.Level == 0)
+            {
+                moveTasks(moveUp: false);
+            }
+            else
+            {
+                movePlugins(moveUp: false);
+            }
+
+            populateTree();
+        }
+
+        private void moveTasks(bool moveUp)
+        {
+            TreeNode selected = treeViewPlugins.SelectedNode;
+            int taskIndex = selected.Index;
+            Task toMove = tasks.Find(t => t.name == selected.Text);
+
+            if (taskIndex == 0 && moveUp)
+            {
+                return;
+            }
+            if (taskIndex == treeViewPlugins.Nodes.Count - 1 && !moveUp)
+            {
+                return;
+            }
+
+            tasks.Remove(toMove);
+
+            if (moveUp)
+            {
+                tasks.Insert(taskIndex - 1, toMove);
+            }
+            else
+            {
+                tasks.Insert(taskIndex + 1, toMove);
+            }
+        }
+
+        private void movePlugins(bool moveUp)
+        {
+            TreeNode selected = treeViewPlugins.SelectedNode;
+            int pluginIndex = selected.Index;
+            int taskIndex = selected.Parent.Index;
+            List<Plugin> pluginList = tasks.ElementAt(taskIndex).plugins;
+            Plugin toMove = pluginList.ElementAt(pluginIndex);
+            pluginList.Remove(toMove);
+
+            if (moveUp)
+            {
+                if (pluginIndex == 0)
+                {
+                    if (taskIndex == 0)
+                    {
+                        return;
+                    }
+                    Task task = tasks.ElementAt(taskIndex - 1);
+                    task.addPlugin(toMove);
+                }
+                else
+                {
+                    pluginList.Insert(pluginIndex - 1, toMove);
+                }
+            }
+            else
+            {
+                if (pluginIndex == pluginList.Count - 1)
+                {
+                    if (taskIndex == tasks.Count - 1)
+                    {
+                        return;
+                    }
+                    Task task = tasks.ElementAt(taskIndex);
+                    task.plugins.Insert(0, toMove);
+                }
+                else
+                {
+                    pluginList.Insert(pluginIndex + 1, toMove);
+                }
+            }
+        }
+
+
     }
 }
