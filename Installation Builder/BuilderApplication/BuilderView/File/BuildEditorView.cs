@@ -303,12 +303,15 @@ namespace BuilderView.File
             int taskIndex = selected.Parent.Index;
             List<Plugin> pluginList = tasks.ElementAt(taskIndex).plugins;
             Plugin toMove = pluginList.ElementAt(pluginIndex);
-            pluginList.Remove(toMove);
 
+            // Move up
             if (moveUp)
             {
+                pluginList.Remove(toMove);
+                // First item in the list
                 if (pluginIndex == 0)
                 {
+                    // No task to move to
                     if (taskIndex == 0)
                     {
                         return;
@@ -316,24 +319,28 @@ namespace BuilderView.File
                     Task task = tasks.ElementAt(taskIndex - 1);
                     task.addPlugin(toMove);
                 }
+                // Not first item in the list
                 else
                 {
                     pluginList.Insert(pluginIndex - 1, toMove);
                 }
             }
+            // Move down
             else
             {
                 if (pluginIndex == pluginList.Count - 1)
                 {
+                    pluginList.Remove(toMove);
                     if (taskIndex == tasks.Count - 1)
                     {
                         return;
                     }
-                    Task task = tasks.ElementAt(taskIndex);
+                    Task task = tasks.ElementAt(taskIndex + 1);
                     task.plugins.Insert(0, toMove);
                 }
                 else
                 {
+                    pluginList.Remove(toMove);
                     pluginList.Insert(pluginIndex + 1, toMove);
                 }
             }
