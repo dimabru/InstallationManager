@@ -1,8 +1,5 @@
-﻿using BuilderEngine;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Text;
 using System.Xml;
 
 namespace HelperLibrary
@@ -30,5 +27,11 @@ namespace HelperLibrary
                 }
             }
         }
+
+        // Location of the 'Builds' directory. Where all the builds will reside.
+        public static string BuildsLocation = $"{DefaultInfo.ProjectLocation}\\Builds";
+        // Location of the info file containing all information about the current builds.
+        public static string BuildsInfoLocation = $"{BuildsLocation}\\Builds.xml";
+
     }
 }

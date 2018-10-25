@@ -71,21 +71,21 @@
             // createNewBuildtoolStripMenuItem
             // 
             this.createNewBuildtoolStripMenuItem.Name = "createNewBuildtoolStripMenuItem";
-            this.createNewBuildtoolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.createNewBuildtoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createNewBuildtoolStripMenuItem.Text = "Create New Build";
             this.createNewBuildtoolStripMenuItem.Click += new System.EventHandler(this.createNewBuildtoolStripMenuItem_Click);
             // 
             // propertiesToolStripMenuItem
             // 
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -147,7 +147,7 @@
             this.buttonEdit.Location = new System.Drawing.Point(13, 246);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(148, 34);
+            this.buttonEdit.Size = new System.Drawing.Size(150, 34);
             this.buttonEdit.TabIndex = 6;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;

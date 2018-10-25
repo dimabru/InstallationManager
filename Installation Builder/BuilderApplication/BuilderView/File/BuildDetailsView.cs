@@ -44,7 +44,7 @@ namespace BuilderView.File
 
             string buildName = textBoxName.Text;
             string description = richTextBoxDescription.Text;
-            string path = BasicInfo.BuildsLocation + "\\" + buildName;
+            string path = DefaultInfo.BuildsLocation + "\\" + buildName;
 
             Build build = new Build(buildName, path ,description);
             build.addTasks(tasks);

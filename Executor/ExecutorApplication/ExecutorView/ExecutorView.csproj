@@ -45,8 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMainForm.Designer.cs">
+      <DependentUpon>EMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EMainForm.resx">
+      <DependentUpon>EMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,6 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\CommonTester\BaseView\BaseView.csproj">
+      <Project>{CBB2222D-D346-4262-B459-BFAD110AE902}</Project>
+      <Name>BaseView</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExecutorEngine\ExecutorEngine.csproj">
       <Project>{f7f3ef51-6e57-4775-ab04-7cd3af8072c7}</Project>
       <Name>ExecutorEngine</Name>

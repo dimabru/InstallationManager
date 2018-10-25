@@ -18,6 +18,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Plugins\InsertionValueHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugins\Plugin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugins\RunCmd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertiesHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertiesView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Task.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)XMLBuild.cs" />
@@ -26,5 +28,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Icons\edit_icon.ico" />
+    <Content Include="$(MSBuildThisFileDirectory)OutFiles\BuilderDefaultConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

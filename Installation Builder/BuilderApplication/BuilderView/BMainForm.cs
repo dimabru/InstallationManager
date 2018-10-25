@@ -1,5 +1,4 @@
-﻿using BuilderEngine;
-using BuilderView.File;
+﻿using BuilderView.File;
 using HelperLibrary;
 using System;
 using System.Collections.Generic;
@@ -19,7 +18,7 @@ namespace BuilderView
         public BMainForm()
         {
             InitializeComponent();
-            BasicInfo.CreateDefaultDirectory();
+            PropertiesHandler.CreateDefaultDirectory();
 
             populateBuilds();
         }
@@ -39,7 +38,7 @@ namespace BuilderView
             try
             {
                 listViewCurrentBuilds.Clear();
-                buildsInfo = BasicInfo.LoadBuilds();
+                buildsInfo = PropertiesHandler.LoadBuilds();
 
                 foreach (Build build in buildsInfo.builds)
                 {

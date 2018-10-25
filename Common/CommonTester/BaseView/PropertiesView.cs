@@ -1,13 +1,7 @@
-﻿using BuilderEngine;
-using BuilderEngine.BuildOptions;
-using BuilderView.File.PropertyOptions;
+﻿using BuilderView.File.PropertyOptions;
 using HelperLibrary;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 

@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HelperLibrary;
-using BuilderEngine.BuildOptions;
-using BuilderEngine;
+using HelperLibrary.BuildOptions;
 
 namespace BuilderView.File.PropertyOptions
 {

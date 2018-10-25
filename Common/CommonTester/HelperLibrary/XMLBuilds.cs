@@ -1,5 +1,4 @@
-﻿using BuilderEngine;
-using HelperLibrary;
+﻿using HelperLibrary;
 using HelperLibrary.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ namespace HelperLibrary
             populateBuilds();
         }
 
-        public XMLBuilds() : base(BasicInfo.BuildsInfoLocation)
+        public XMLBuilds() : base(DefaultInfo.BuildsInfoLocation)
         {
             populateBuilds();
         }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace BuilderEngine.BuildOptions
+namespace HelperLibrary.BuildOptions
 {
     public class General : BuildOption
     {
@@ -13,7 +13,7 @@ namespace BuilderEngine.BuildOptions
 
         public General() : base(name: "General")
         {
-            buildPath = BasicInfo.BuildsLocation;
+            buildPath = DefaultInfo.BuildsLocation;
         }
 
         public General(string path) : base(name: "General")

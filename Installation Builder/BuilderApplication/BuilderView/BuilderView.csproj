@@ -76,18 +76,6 @@
     <Compile Include="File\PluginControl.Designer.cs">
       <DependentUpon>PluginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="File\PropertiesView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="File\PropertiesView.Designer.cs">
-      <DependentUpon>PropertiesView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="File\PropertyOptions\GeneralControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="File\PropertyOptions\GeneralControl.Designer.cs">
-      <DependentUpon>GeneralControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BMainForm.resx">
@@ -104,12 +92,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="File\PluginControl.resx">
       <DependentUpon>PluginControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="File\PropertiesView.resx">
-      <DependentUpon>PropertiesView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="File\PropertyOptions\GeneralControl.resx">
-      <DependentUpon>GeneralControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,5 +1,5 @@
-﻿using BuilderEngine.BuildOptions;
-using HelperLibrary;
+﻿using HelperLibrary;
+using HelperLibrary.BuildOptions;
 using HelperLibrary.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace BuilderEngine
+namespace HelperLibrary
 {
     // Properties xml file. Loads data from config.xml file. 
     public class XMLProperties : XMLFile
@@ -41,7 +41,7 @@ namespace BuilderEngine
                     path = DefaultInfo.MyDocumentsPath;
                 }
             }
-            catch(MissingAttributeException)
+            catch (MissingAttributeException)
             {
             }
             path += GetElementValue(element);
