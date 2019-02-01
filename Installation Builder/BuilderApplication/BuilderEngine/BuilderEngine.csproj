@@ -44,6 +44,12 @@
     <Compile Include="BasicInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\CommonTester\BaseView\BaseView.csproj">
+      <Project>{cbb2222d-d346-4262-b459-bfad110ae902}</Project>
+      <Name>BaseView</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\..\..\Common\CommonTester\HelperLibrary\HelperLibrary.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
