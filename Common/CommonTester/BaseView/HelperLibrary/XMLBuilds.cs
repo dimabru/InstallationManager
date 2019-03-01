@@ -84,7 +84,9 @@ namespace HelperProject.HelperLibrary
 
         public Build getBuild(string buildName)
         {
-            return builds.Find(b => b.name == buildName);
+            Build build = builds.Find(b => b.name == buildName);
+            build.tasks = new XMLBuild($"{build.path}\\{DefaultInfo.BuildDetailsFileName}").tasks;
+            return build;
         }
 
         public string getBuildPath(string buildName)

@@ -76,6 +76,7 @@ namespace HelperProject.HelperLibrary.Plugins
         {
             XElement pluginElement = new XElement("Plugin");
             pluginElement.Add(new XAttribute("Name", name));
+            pluginElement.Add(new XAttribute("Description", description));
 
             foreach (InsertionValueHelper insert in insertions)
             {

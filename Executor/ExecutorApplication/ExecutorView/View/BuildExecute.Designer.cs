@@ -29,41 +29,78 @@
         private void InitializeComponent()
         {
             this.labelBuildName = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxBuildTasks = new System.Windows.Forms.GroupBox();
+            this.treeViewTasks = new System.Windows.Forms.TreeView();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
+            this.groupBoxBuildTasks.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelBuildName
             // 
             this.labelBuildName.AutoSize = true;
             this.labelBuildName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelBuildName.Location = new System.Drawing.Point(12, 9);
+            this.labelBuildName.Location = new System.Drawing.Point(445, 9);
             this.labelBuildName.Name = "labelBuildName";
             this.labelBuildName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelBuildName.Size = new System.Drawing.Size(145, 29);
             this.labelBuildName.TabIndex = 1;
             this.labelBuildName.Text = "Build Name";
             // 
-            // groupBox1
+            // groupBoxBuildTasks
             // 
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 41);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(861, 430);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBoxBuildTasks.BackColor = System.Drawing.SystemColors.Info;
+            this.groupBoxBuildTasks.Controls.Add(this.treeViewTasks);
+            this.groupBoxBuildTasks.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBoxBuildTasks.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxBuildTasks.Name = "groupBoxBuildTasks";
+            this.groupBoxBuildTasks.Size = new System.Drawing.Size(439, 471);
+            this.groupBoxBuildTasks.TabIndex = 2;
+            this.groupBoxBuildTasks.TabStop = false;
+            // 
+            // treeViewTasks
+            // 
+            this.treeViewTasks.CheckBoxes = true;
+            this.treeViewTasks.Dock = System.Windows.Forms.DockStyle.Left;
+            this.treeViewTasks.Location = new System.Drawing.Point(3, 18);
+            this.treeViewTasks.Name = "treeViewTasks";
+            this.treeViewTasks.Size = new System.Drawing.Size(303, 450);
+            this.treeViewTasks.TabIndex = 0;
+            this.treeViewTasks.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.LoadDescription);
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.AutoSize = true;
+            this.labelDescription.Location = new System.Drawing.Point(447, 75);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(79, 17);
+            this.labelDescription.TabIndex = 3;
+            this.labelDescription.Text = "Description";
+            // 
+            // richTextBoxDescription
+            // 
+            this.richTextBoxDescription.Location = new System.Drawing.Point(450, 95);
+            this.richTextBoxDescription.Name = "richTextBoxDescription";
+            this.richTextBoxDescription.Size = new System.Drawing.Size(399, 78);
+            this.richTextBoxDescription.TabIndex = 4;
+            this.richTextBoxDescription.Text = "";
             // 
             // BuildExecute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(861, 497);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.richTextBoxDescription);
+            this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelBuildName);
+            this.Controls.Add(this.groupBoxBuildTasks);
             this.Name = "BuildExecute";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Controls.SetChildIndex(this.groupBoxBuildTasks, 0);
             this.Controls.SetChildIndex(this.labelBuildName, 0);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.labelDescription, 0);
+            this.Controls.SetChildIndex(this.richTextBoxDescription, 0);
+            this.groupBoxBuildTasks.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,6 +109,9 @@
         #endregion
 
         private System.Windows.Forms.Label labelBuildName;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxBuildTasks;
+        private System.Windows.Forms.TreeView treeViewTasks;
+        private System.Windows.Forms.Label labelDescription;
+        private System.Windows.Forms.RichTextBox richTextBoxDescription;
     }
 }
