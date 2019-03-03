@@ -45,6 +45,7 @@ namespace BaseView
                 listViewOptions.Items.Add(option);
             }
 
+           // optionsToControl["General"].BackgroundImage = ;
 
         }
 
@@ -68,6 +69,22 @@ namespace BaseView
         {
             buildOptions.Save();
             this.Close();
+        }
+
+        private void splitContainerProperties_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+       
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

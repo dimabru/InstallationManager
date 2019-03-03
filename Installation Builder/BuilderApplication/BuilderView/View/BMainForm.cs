@@ -3,12 +3,21 @@ using BaseView.HelperLibrary;
 using BuilderApplication.View.File;
 using HelperProject.HelperLibrary;
 using System;
+using System.Windows.Forms;
 using System.Xml;
+using System.Drawing.Drawing2D;
 
 namespace BuilderApplication.View
 {
+    
     public partial class BMainForm : HelperProject.BaseView.BaseMainForm
     {
+        /*
+         * integers set so the borderless fom could move
+         */
+        int mov;
+        int movX;
+        int movY;
         private XMLBuilds buildsInfo { get; set; }
 
         public BMainForm()
@@ -91,6 +100,54 @@ namespace BuilderApplication.View
 
             XMLBuild xmlBuild = new XMLBuild(buildPath + "\\" + DefaultInfo.BuildDetailsFileName);
             new BuildEditorView(xmlBuild.tasks, buildName, buildDescription).ShowDialog();
+        }
+
+        private void BMainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStripMain_ItemClicked(object sender, System.Windows.Forms.ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        /*
+         * the functions that give the borderless form, moving capabilities
+         */
+
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void buttonCurrentBuilds_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
