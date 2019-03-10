@@ -13,7 +13,7 @@ namespace BuilderApplication.View
     public partial class BMainForm : HelperProject.BaseView.BaseMainForm
     {
         /*
-         * integers set so the borderless fom could move
+         * integers set so the borderless form could move
          */
         int mov;
         int movX;
@@ -102,22 +102,13 @@ namespace BuilderApplication.View
             new BuildEditorView(xmlBuild.tasks, buildName, buildDescription).ShowDialog();
         }
 
-        private void BMainForm_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void menuStripMain_ItemClicked(object sender, System.Windows.Forms.ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void ExitPictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void ResumePictureBox2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
@@ -143,11 +134,6 @@ namespace BuilderApplication.View
         private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
-        }
-
-        private void buttonCurrentBuilds_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

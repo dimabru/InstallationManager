@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PropertiesView));
             this.splitContainerProperties = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ResumepictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ExitpictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -42,8 +42,8 @@
             this.splitContainerProperties.Panel1.SuspendLayout();
             this.splitContainerProperties.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResumepictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -61,10 +61,6 @@
             this.splitContainerProperties.Panel1.Controls.Add(this.buttonCancel);
             this.splitContainerProperties.Panel1.Controls.Add(this.buttonSave);
             this.splitContainerProperties.Panel1.Controls.Add(this.listViewOptions);
-            // 
-            // splitContainerProperties.Panel2
-            // 
-            this.splitContainerProperties.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainerProperties_Panel2_Paint);
             this.splitContainerProperties.Size = new System.Drawing.Size(646, 382);
             this.splitContainerProperties.SplitterDistance = 215;
             this.splitContainerProperties.SplitterWidth = 3;
@@ -74,8 +70,8 @@
             // 
             this.panel1.AccessibleName = "Header";
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.ResumepictureBox3);
+            this.panel1.Controls.Add(this.ExitpictureBox1);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -86,30 +82,30 @@
             this.panel1.Size = new System.Drawing.Size(215, 43);
             this.panel1.TabIndex = 11;
             // 
-            // pictureBox3
+            // ResumepictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(146, 1);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.pictureBox3.Size = new System.Drawing.Size(31, 42);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.ResumepictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("ResumepictureBox3.Image")));
+            this.ResumepictureBox3.Location = new System.Drawing.Point(146, 1);
+            this.ResumepictureBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.ResumepictureBox3.Name = "ResumepictureBox3";
+            this.ResumepictureBox3.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
+            this.ResumepictureBox3.Size = new System.Drawing.Size(31, 42);
+            this.ResumepictureBox3.TabIndex = 7;
+            this.ResumepictureBox3.TabStop = false;
+            this.ResumepictureBox3.Click += new System.EventHandler(this.ResumepictureBox3_Click);
             // 
-            // pictureBox1
+            // ExitpictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(177, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 9, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(38, 43);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.ExitpictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitpictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ExitpictureBox1.Image")));
+            this.ExitpictureBox1.Location = new System.Drawing.Point(177, 0);
+            this.ExitpictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 9, 1);
+            this.ExitpictureBox1.Name = "ExitpictureBox1";
+            this.ExitpictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
+            this.ExitpictureBox1.Size = new System.Drawing.Size(38, 43);
+            this.ExitpictureBox1.TabIndex = 6;
+            this.ExitpictureBox1.TabStop = false;
+            this.ExitpictureBox1.Click += new System.EventHandler(this.ExitpictureBox1_Click_1);
             // 
             // pictureBox4
             // 
@@ -182,8 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerProperties)).EndInit();
             this.splitContainerProperties.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResumepictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitpictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
@@ -200,8 +196,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ResumepictureBox3;
+        private System.Windows.Forms.PictureBox ExitpictureBox1;
     }
 }
 

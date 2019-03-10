@@ -41,15 +41,15 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonCreateNewBuild = new System.Windows.Forms.Button();
             this.panelBuilderMainForm = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ResumePictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ExitPictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonCurrentBuilds = new System.Windows.Forms.Button();
             this.buttonDescription = new System.Windows.Forms.Button();
+            this.buttonCurrentBuilds = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.panelBuilderMainForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResumePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +70,6 @@
             this.menuStripMain.Size = new System.Drawing.Size(142, 24);
             this.menuStripMain.TabIndex = 1;
             this.menuStripMain.Text = "menuStripMain";
-            this.menuStripMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripMain_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -179,8 +178,8 @@
             // 
             this.panelBuilderMainForm.AccessibleName = "Header";
             this.panelBuilderMainForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
-            this.panelBuilderMainForm.Controls.Add(this.pictureBox2);
-            this.panelBuilderMainForm.Controls.Add(this.pictureBox1);
+            this.panelBuilderMainForm.Controls.Add(this.ResumePictureBox2);
+            this.panelBuilderMainForm.Controls.Add(this.ExitPictureBox1);
             this.panelBuilderMainForm.Controls.Add(this.menuStripMain);
             this.panelBuilderMainForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelBuilderMainForm.Dock = System.Windows.Forms.DockStyle.Top;
@@ -193,30 +192,30 @@
             this.panelBuilderMainForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseMove);
             this.panelBuilderMainForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseUp);
             // 
-            // pictureBox2
+            // ResumePictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(576, 1);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.pictureBox2.Size = new System.Drawing.Size(31, 42);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.ResumePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("ResumePictureBox2.Image")));
+            this.ResumePictureBox2.Location = new System.Drawing.Point(576, 1);
+            this.ResumePictureBox2.Margin = new System.Windows.Forms.Padding(1);
+            this.ResumePictureBox2.Name = "ResumePictureBox2";
+            this.ResumePictureBox2.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
+            this.ResumePictureBox2.Size = new System.Drawing.Size(31, 42);
+            this.ResumePictureBox2.TabIndex = 4;
+            this.ResumePictureBox2.TabStop = false;
+            this.ResumePictureBox2.Click += new System.EventHandler(this.ResumePictureBox2_Click);
             // 
-            // pictureBox1
+            // ExitPictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(607, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 9, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(38, 43);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.ExitPictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ExitPictureBox1.Image")));
+            this.ExitPictureBox1.Location = new System.Drawing.Point(607, 0);
+            this.ExitPictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 9, 1);
+            this.ExitPictureBox1.Name = "ExitPictureBox1";
+            this.ExitPictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
+            this.ExitPictureBox1.Size = new System.Drawing.Size(38, 43);
+            this.ExitPictureBox1.TabIndex = 3;
+            this.ExitPictureBox1.TabStop = false;
+            this.ExitPictureBox1.Click += new System.EventHandler(this.ExitPictureBox1_Click);
             // 
             // panel1
             // 
@@ -229,23 +228,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(153, 354);
+            this.panel1.Size = new System.Drawing.Size(153, 332);
             this.panel1.TabIndex = 10;
-            // 
-            // buttonCurrentBuilds
-            // 
-            this.buttonCurrentBuilds.Cursor = System.Windows.Forms.Cursors.No;
-            this.buttonCurrentBuilds.Enabled = false;
-            this.buttonCurrentBuilds.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCurrentBuilds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.buttonCurrentBuilds.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonCurrentBuilds.Location = new System.Drawing.Point(0, 43);
-            this.buttonCurrentBuilds.Name = "buttonCurrentBuilds";
-            this.buttonCurrentBuilds.Size = new System.Drawing.Size(153, 32);
-            this.buttonCurrentBuilds.TabIndex = 8;
-            this.buttonCurrentBuilds.Text = "Current Builds";
-            this.buttonCurrentBuilds.UseVisualStyleBackColor = true;
-            this.buttonCurrentBuilds.Click += new System.EventHandler(this.buttonCurrentBuilds_Click);
             // 
             // buttonDescription
             // 
@@ -263,6 +247,20 @@
             this.buttonDescription.Text = "Description";
             this.buttonDescription.UseVisualStyleBackColor = false;
             // 
+            // buttonCurrentBuilds
+            // 
+            this.buttonCurrentBuilds.Cursor = System.Windows.Forms.Cursors.No;
+            this.buttonCurrentBuilds.Enabled = false;
+            this.buttonCurrentBuilds.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCurrentBuilds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.buttonCurrentBuilds.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonCurrentBuilds.Location = new System.Drawing.Point(0, 43);
+            this.buttonCurrentBuilds.Name = "buttonCurrentBuilds";
+            this.buttonCurrentBuilds.Size = new System.Drawing.Size(153, 32);
+            this.buttonCurrentBuilds.TabIndex = 8;
+            this.buttonCurrentBuilds.Text = "Current Builds";
+            this.buttonCurrentBuilds.UseVisualStyleBackColor = true;
+            // 
             // BMainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -279,7 +277,6 @@
             this.MinimumSize = new System.Drawing.Size(132, 227);
             this.Name = "BMainForm";
             this.Text = "Installation Builder";
-            this.Load += new System.EventHandler(this.BMainForm_Load);
             this.Controls.SetChildIndex(this.listViewCurrentBuilds, 0);
             this.Controls.SetChildIndex(this.richTextBoxDescription, 0);
             this.Controls.SetChildIndex(this.panelBuilderMainForm, 0);
@@ -288,8 +285,8 @@
             this.menuStripMain.PerformLayout();
             this.panelBuilderMainForm.ResumeLayout(false);
             this.panelBuilderMainForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResumePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitPictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -310,8 +307,8 @@
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewBuildtoolStripMenuItem;
         private System.Windows.Forms.Panel panelBuilderMainForm;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ResumePictureBox2;
+        private System.Windows.Forms.PictureBox ExitPictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonCurrentBuilds;
         private System.Windows.Forms.Button buttonDescription;
