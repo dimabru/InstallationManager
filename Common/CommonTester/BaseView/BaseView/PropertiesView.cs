@@ -45,8 +45,6 @@ namespace BaseView
                 listViewOptions.Items.Add(option);
             }
 
-           // optionsToControl["General"].BackgroundImage = ;
-
         }
 
         private void populateSettings(object sender, EventArgs e)
