@@ -45,7 +45,6 @@ namespace BaseView
                 listViewOptions.Items.Add(option);
             }
 
-
         }
 
         private void populateSettings(object sender, EventArgs e)
@@ -68,6 +67,17 @@ namespace BaseView
         {
             buildOptions.Save();
             this.Close();
+        }
+    
+
+        private void ExitpictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ResumepictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
