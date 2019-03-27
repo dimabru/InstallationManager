@@ -47,5 +47,15 @@ namespace BuilderApplication.View.File
             Dialogs.NoticeMessage("Build saved succesfully");
             this.Close();
         }
+
+        private void ExitPictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

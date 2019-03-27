@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Drawing.Drawing2D;
 
+
 namespace BuilderApplication.View
 {
     
@@ -35,7 +36,11 @@ namespace BuilderApplication.View
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new PropertiesView().ShowDialog();
+            this.WindowState = FormWindowState.Minimized;
+            PropertiesView propView = new PropertiesView();
+            propView.Show();
+            propView.StartPosition = FormStartPosition.Manual;
+
         }
 
         private void populateBuilds()
