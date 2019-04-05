@@ -1,4 +1,5 @@
-﻿using HelperProject.HelperLibrary;
+﻿using ExecutorView.Engine;
+using HelperProject.HelperLibrary;
 using HelperProject.HelperLibrary.Plugins;
 using System;
 using System.Collections.Generic;
@@ -48,12 +49,17 @@ namespace ExecutorView.View
                 TreeNode parentTask = selectedNode.Parent;
                 Task selectedTask = this.build.tasks.Find(t => t.name == parentTask.Text);
                 Plugin selectedPlugin = selectedTask.plugins.Find(p => p.name == selectedNode.Text);
-                this.richTextBoxDescription.Text = selectedPlugin.name;
+                this.richTextBoxDescription.Text = $"{selectedPlugin.name}\n{selectedPlugin.description}";
             }
             else
             {
                 this.richTextBoxDescription.Text = string.Empty;
             }
+        }
+
+        private void buttonExecute_Click(object sender, EventArgs e)
+        {
+            new ExecutionService(this.build).execute();
         }
     }
 }

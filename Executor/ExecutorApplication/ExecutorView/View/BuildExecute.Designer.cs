@@ -33,6 +33,7 @@
             this.treeViewTasks = new System.Windows.Forms.TreeView();
             this.labelDescription = new System.Windows.Forms.Label();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
+            this.buttonExecute = new System.Windows.Forms.Button();
             this.groupBoxBuildTasks.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,10 +86,21 @@
             this.richTextBoxDescription.TabIndex = 4;
             this.richTextBoxDescription.Text = "";
             // 
+            // buttonExecute
+            // 
+            this.buttonExecute.Location = new System.Drawing.Point(450, 179);
+            this.buttonExecute.Name = "buttonExecute";
+            this.buttonExecute.Size = new System.Drawing.Size(75, 23);
+            this.buttonExecute.TabIndex = 5;
+            this.buttonExecute.Text = "Execute";
+            this.buttonExecute.UseVisualStyleBackColor = true;
+            this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
+            // 
             // BuildExecute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(861, 497);
+            this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.richTextBoxDescription);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelBuildName);
@@ -100,6 +112,7 @@
             this.Controls.SetChildIndex(this.labelBuildName, 0);
             this.Controls.SetChildIndex(this.labelDescription, 0);
             this.Controls.SetChildIndex(this.richTextBoxDescription, 0);
+            this.Controls.SetChildIndex(this.buttonExecute, 0);
             this.groupBoxBuildTasks.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,5 +126,6 @@
         private System.Windows.Forms.TreeView treeViewTasks;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.RichTextBox richTextBoxDescription;
+        private System.Windows.Forms.Button buttonExecute;
     }
 }
