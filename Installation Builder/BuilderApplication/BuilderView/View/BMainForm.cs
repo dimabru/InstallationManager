@@ -105,6 +105,7 @@ namespace BuilderApplication.View
 
             XMLBuild xmlBuild = new XMLBuild(buildPath + "\\" + DefaultInfo.BuildDetailsFileName);
             new BuildEditorView(xmlBuild.tasks, buildName, buildDescription,this).ShowDialog();
+            populateBuilds(); //refreshes the list view(loads the new builds)
         }
 
 
