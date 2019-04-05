@@ -7,6 +7,13 @@ namespace BuilderApplication.View.File
 {
     public partial class BuildDetailsView : Form
     {
+        /*
+         * integers set so the borderless form could move
+         */
+        int mov;
+        int movX;
+        int movY;
+
         List<Task> tasks;
 
         public BuildDetailsView(List<Task> tsks, string name, string description)
@@ -57,5 +64,31 @@ namespace BuilderApplication.View.File
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        /*
+         * the functions that give the borderless form, moving capabilities
+         */
+
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        
     }
 }

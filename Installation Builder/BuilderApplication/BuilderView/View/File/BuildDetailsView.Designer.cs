@@ -36,13 +36,13 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.panelBuilderMainForm = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ResumePictureBox2 = new System.Windows.Forms.PictureBox();
             this.ExitPictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBuilderMainForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResumePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
@@ -73,6 +73,7 @@
             // 
             // textBoxName
             // 
+            this.textBoxName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxName.Location = new System.Drawing.Point(21, 105);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(100, 20);
@@ -80,6 +81,7 @@
             // 
             // richTextBoxDescription
             // 
+            this.richTextBoxDescription.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.richTextBoxDescription.Location = new System.Drawing.Point(171, 105);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.Size = new System.Drawing.Size(248, 119);
@@ -128,6 +130,21 @@
             this.panelBuilderMainForm.Name = "panelBuilderMainForm";
             this.panelBuilderMainForm.Size = new System.Drawing.Size(431, 43);
             this.panelBuilderMainForm.TabIndex = 17;
+            this.panelBuilderMainForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseDown);
+            this.panelBuilderMainForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseMove);
+            this.panelBuilderMainForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(362, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
+            this.pictureBox1.Size = new System.Drawing.Size(31, 42);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ResumePictureBox2
             // 
@@ -153,18 +170,6 @@
             this.ExitPictureBox1.TabStop = false;
             this.ExitPictureBox1.Click += new System.EventHandler(this.ExitPictureBox1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(362, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(31, 42);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // BuildDetailsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,9 +187,9 @@
             this.Name = "BuildDetailsView";
             this.Text = "Build Details";
             this.panelBuilderMainForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResumePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

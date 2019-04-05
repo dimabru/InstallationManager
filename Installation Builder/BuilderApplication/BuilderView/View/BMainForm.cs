@@ -36,10 +36,8 @@ namespace BuilderApplication.View
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
             PropertiesView propView = new PropertiesView();
-            propView.Show();
-            propView.StartPosition = FormStartPosition.Manual;
+            propView.ShowDialog();
 
         }
 

@@ -346,19 +346,18 @@ namespace BuilderApplication.View.File
             }
         }
 
-
         /*
-        * the functions that give the borderless form, moving capabilities
-        */
+         * the functions that give the borderless form, moving capabilities
+         */
 
-        private void BuildEditorView_MouseDown(object sender, MouseEventArgs e)
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
             movX = e.X;
             movY = e.Y;
         }
 
-        private void BuildEditorView_MouseMove(object sender, MouseEventArgs e)
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (mov == 1)
             {
@@ -366,7 +365,7 @@ namespace BuilderApplication.View.File
             }
         }
 
-        private void BuildEditorView_MouseUp(object sender, MouseEventArgs e)
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
         }

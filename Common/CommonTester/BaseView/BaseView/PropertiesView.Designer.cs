@@ -62,6 +62,7 @@
             // 
             // splitContainerProperties.Panel2
             // 
+            this.splitContainerProperties.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
             this.splitContainerProperties.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainerProperties.Panel2.BackgroundImage")));
             this.splitContainerProperties.Size = new System.Drawing.Size(646, 337);
             this.splitContainerProperties.SplitterDistance = 215;
@@ -101,6 +102,7 @@
             // 
             // listViewOptions
             // 
+            this.listViewOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
             this.listViewOptions.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("listViewOptions.BackgroundImage")));
             this.listViewOptions.GridLines = true;
             this.listViewOptions.Location = new System.Drawing.Point(0, 0);
@@ -149,6 +151,9 @@
             this.panelBuilderMainForm.Name = "panelBuilderMainForm";
             this.panelBuilderMainForm.Size = new System.Drawing.Size(646, 43);
             this.panelBuilderMainForm.TabIndex = 10;
+            this.panelBuilderMainForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainFrom_MouseDown);
+            this.panelBuilderMainForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseMove);
+            this.panelBuilderMainForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseUp);
             // 
             // PropertiesView
             // 

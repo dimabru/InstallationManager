@@ -11,12 +11,21 @@ using HelperProject.HelperLibrary;
 using System.Xml;
 using BaseView.HelperLibrary;
 using ExecutorView.View;
+using System.Runtime.InteropServices;
 
 namespace ExecutorApplication.View
 {
     public partial class EMainForm : BaseMainForm
     {
+        /*
+         * integers set so the borderless form could move
+         */
+        int mov;
+        int movX;
+        int movY;
+
         private XMLBuilds buildsInfo { get; set; }
+
 
         public EMainForm()
         {
@@ -24,6 +33,22 @@ namespace ExecutorApplication.View
             PropertiesHandler.CreateDefaultDirectory();
             this.createBuildsPathLabel();
             this.populateBuilds();
+        }
+
+
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+
+            }
+            base.WndProc(ref m);
         }
 
         private void populateBuilds()
@@ -114,6 +139,57 @@ namespace ExecutorApplication.View
             {
                 return;
             }
+        }
+       
+
+        private void ExitpictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        /*
+         * the functions that give the borderless form, moving capabilities
+         */
+
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void labelCurrentBuilds_Click(object sender, EventArgs e)
+        {
+            labelCurrentBuilds.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void labelCurrentBuildsFolder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelBuildsFolderPath_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDescription_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

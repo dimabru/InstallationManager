@@ -149,7 +149,7 @@
             // 
             // treeViewPlugins
             // 
-            this.treeViewPlugins.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.treeViewPlugins.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.treeViewPlugins.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeViewPlugins.HideSelection = false;
             this.treeViewPlugins.Location = new System.Drawing.Point(427, 20);
@@ -160,7 +160,7 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBoxDescription.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDescription.Location = new System.Drawing.Point(20, 89);
             this.textBoxDescription.Multiline = true;
@@ -185,6 +185,7 @@
             // 
             // comboBoxChoosePlugin
             // 
+            this.comboBoxChoosePlugin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.comboBoxChoosePlugin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChoosePlugin.FormattingEnabled = true;
             this.comboBoxChoosePlugin.Items.AddRange(new object[] {
@@ -272,6 +273,9 @@
             this.panelBuilderMainForm.Name = "panelBuilderMainForm";
             this.panelBuilderMainForm.Size = new System.Drawing.Size(745, 43);
             this.panelBuilderMainForm.TabIndex = 16;
+            this.panelBuilderMainForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseDown);
+            this.panelBuilderMainForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseMove);
+            this.panelBuilderMainForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseUp);
             // 
             // ResumePictureBox2
             // 
@@ -300,7 +304,7 @@
             // 
             // pluginControl
             // 
-            this.pluginControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pluginControl.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pluginControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pluginControl.inputDict = ((System.Collections.Generic.Dictionary<string, System.Windows.Forms.Control>)(resources.GetObject("pluginControl.inputDict")));
             this.pluginControl.Location = new System.Drawing.Point(0, 0);
