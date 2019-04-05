@@ -40,7 +40,19 @@ namespace HelperProject.HelperLibrary
                 foreach (XElement pluginElement in pluginElements)
                 {
                     string name = pluginElement.Attribute("Name").Value;
-                    plugins.Add(new Plugin(name));
+                    List<XElement> inputElements = pluginElement.Descendants("Input").ToList();
+                    Plugin plugin = new Plugin(name);
+
+                    foreach (XElement inputElement in inputElements)
+                    {
+                        string label = inputElement.Attribute("Label").Value;
+                        string value = inputElement.Attribute("Value").Value;
+                        InsertionValueHelper insertion = new InsertionValueHelper(InsertionValueHelper.InputType.TextBox, label);
+
+                        plugin.valueDict[insertion] = value;
+                    }
+
+                    plugins.Add(plugin);
                 }
                 Task task = new Task(taskName);
                 task.plugins = plugins;

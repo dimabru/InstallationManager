@@ -49,7 +49,15 @@ namespace ExecutorView.View
                 TreeNode parentTask = selectedNode.Parent;
                 Task selectedTask = this.build.tasks.Find(t => t.name == parentTask.Text);
                 Plugin selectedPlugin = selectedTask.plugins.Find(p => p.name == selectedNode.Text);
-                this.richTextBoxDescription.Text = $"{selectedPlugin.name}\n{selectedPlugin.description}";
+
+                List<string> values = selectedPlugin.getValues();
+                this.richTextBoxDescription.Text = $"{selectedPlugin.name}\n";
+
+                foreach (string value in values)
+                {
+                    this.richTextBoxDescription.Text += $"{value}\n";
+                }
+
             }
             else
             {
@@ -59,7 +67,22 @@ namespace ExecutorView.View
 
         private void buttonExecute_Click(object sender, EventArgs e)
         {
-            new ExecutionService(this.build).execute();
+            this.updateEnabled();
+            new ExecutionService(this.build, this.richTextBoxExecution).execute();
+        }
+
+        private void updateEnabled()
+        {
+            for (int i = 0; i < treeViewTasks.Nodes.Count; i++)
+            {
+                Task task = this.build.tasks[i];
+                task.enabled = treeViewTasks.Nodes[i].Checked;
+
+                for (int j = 0; j < treeViewTasks.Nodes[i].Nodes.Count; j++)
+                {
+                    task.plugins[j].enabled = treeViewTasks.Nodes[i].Nodes[j].Checked;
+                }
+            }
         }
     }
 }

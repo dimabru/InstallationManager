@@ -34,6 +34,7 @@
             this.labelDescription = new System.Windows.Forms.Label();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.buttonExecute = new System.Windows.Forms.Button();
+            this.richTextBoxExecution = new System.Windows.Forms.RichTextBox();
             this.groupBoxBuildTasks.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,10 +97,21 @@
             this.buttonExecute.UseVisualStyleBackColor = true;
             this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
             // 
+            // richTextBoxExecution
+            // 
+            this.richTextBoxExecution.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.richTextBoxExecution.Location = new System.Drawing.Point(439, 211);
+            this.richTextBoxExecution.Name = "richTextBoxExecution";
+            this.richTextBoxExecution.ReadOnly = true;
+            this.richTextBoxExecution.Size = new System.Drawing.Size(426, 260);
+            this.richTextBoxExecution.TabIndex = 6;
+            this.richTextBoxExecution.Text = "";
+            // 
             // BuildExecute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(861, 497);
+            this.ClientSize = new System.Drawing.Size(865, 497);
+            this.Controls.Add(this.richTextBoxExecution);
             this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.richTextBoxDescription);
             this.Controls.Add(this.labelDescription);
@@ -107,12 +119,12 @@
             this.Controls.Add(this.groupBoxBuildTasks);
             this.Name = "BuildExecute";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Controls.SetChildIndex(this.groupBoxBuildTasks, 0);
             this.Controls.SetChildIndex(this.labelBuildName, 0);
             this.Controls.SetChildIndex(this.labelDescription, 0);
             this.Controls.SetChildIndex(this.richTextBoxDescription, 0);
             this.Controls.SetChildIndex(this.buttonExecute, 0);
+            this.Controls.SetChildIndex(this.richTextBoxExecution, 0);
             this.groupBoxBuildTasks.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,5 +139,6 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.RichTextBox richTextBoxDescription;
         private System.Windows.Forms.Button buttonExecute;
+        private System.Windows.Forms.RichTextBox richTextBoxExecution;
     }
 }

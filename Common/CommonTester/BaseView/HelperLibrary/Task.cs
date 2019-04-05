@@ -8,17 +8,20 @@ namespace HelperProject.HelperLibrary
     {
         public List<Plugin> plugins { get; set; }
         public string name { get; set; }
+        public bool enabled { get; set; }
 
         public Task(string n, List<Plugin> plugs)
         {
             name = n;
             plugins = plugs;
+            enabled = true;
         }
 
         public Task(string n)
         {
             name = n;
             plugins = new List<Plugin>();
+            enabled = true;
         }
 
         public void addPlugin(Plugin plugin)

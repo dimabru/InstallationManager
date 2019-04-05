@@ -13,6 +13,7 @@ namespace HelperProject.HelperLibrary.Plugins
         public string description { get; }
         public List<InsertionValueHelper> insertions { get; set; }
         public Dictionary<InsertionValueHelper, string> valueDict { get; set; }
+        public bool enabled { get; set; }
 
         public Plugin(string desc, string Name)
         {
@@ -20,6 +21,7 @@ namespace HelperProject.HelperLibrary.Plugins
             description = desc;
             insertions = new List<InsertionValueHelper>();
             valueDict = new Dictionary<InsertionValueHelper, string>();
+            enabled = true;
         }
 
         public Plugin(string Name)
@@ -28,6 +30,7 @@ namespace HelperProject.HelperLibrary.Plugins
             description = "";
             insertions = new List<InsertionValueHelper>();
             valueDict = new Dictionary<InsertionValueHelper, string>();
+            enabled = true;
         }
 
         public void updateInsertion(string label, string value)
@@ -70,6 +73,18 @@ namespace HelperProject.HelperLibrary.Plugins
                 }
             }
             return null;
+        }
+
+        public List<string> getValues()
+        {
+            List<string> values = new List<string>();
+            
+            foreach (string value in this.valueDict.Values)
+            {
+                values.Add(value);
+            }
+
+            return values;
         }
 
         public XElement Save()
