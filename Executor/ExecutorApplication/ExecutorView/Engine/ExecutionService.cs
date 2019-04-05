@@ -3,6 +3,7 @@ using HelperProject.HelperLibrary.Plugins;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -52,7 +53,19 @@ namespace ExecutorView.Engine
 
             foreach (InsertionValueHelper insertion in plugin.valueDict.Keys)
             {
-                Output output = this.executeCmd("cmd.exe", plugin.valueDict[insertion]);
+                Output output;
+                if (insertion.input == InsertionValueHelper.InputType.BrowseFile)
+                {
+                    string filepath = plugin.valueDict[insertion];
+                    string filename = Path.GetFileName(filepath);
+                    filepath = Path.Combine(this.build.path, filename);
+                    output = this.executeCmd(filepath, "", true);
+                }
+                else
+                {
+                    output = this.executeCmd("cmd.exe", plugin.valueDict[insertion]);
+                }
+
                 if (!String.IsNullOrEmpty(output.errorOutput))
                 {
                     this.outputWindow.Text += $"Error: {output.errorOutput}\n";
@@ -61,16 +74,23 @@ namespace ExecutorView.Engine
             }
         }
 
-        private Output executeCmd(string filename, string cmd)
+        private Output executeCmd(string filename, string cmd, bool externalFile = false)
         {
-            this.outputWindow.Text += $"Executing command: {cmd}\n";
             cmd = cmd.Replace(@"\\", @"\");
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.RedirectStandardError = true;
             p.StartInfo.FileName = filename;
-            p.StartInfo.Arguments = "/c " + cmd;
+            if (!externalFile)
+            {
+                this.outputWindow.Text += $"Executing command: {cmd}\n";
+                p.StartInfo.Arguments = "/c " + cmd;
+            }
+            else
+            {
+                this.outputWindow.Text += $"Running file: {filename}";
+            }
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
 
             p.Start();
