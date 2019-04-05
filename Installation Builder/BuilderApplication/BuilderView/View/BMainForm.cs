@@ -67,9 +67,11 @@ namespace BuilderApplication.View
         private void buttonCreateNewBuild_Click(object sender, EventArgs e)
         {
             new BuildEditorView().ShowDialog();
+            populateBuilds();
+            
         }
 
-        private void LoadDescription(object sender, EventArgs e)
+        public void LoadDescription(object sender, EventArgs e)
         {
             try
             {
@@ -102,7 +104,7 @@ namespace BuilderApplication.View
             string buildDescription = richTextBoxDescription.Text;
 
             XMLBuild xmlBuild = new XMLBuild(buildPath + "\\" + DefaultInfo.BuildDetailsFileName);
-            new BuildEditorView(xmlBuild.tasks, buildName, buildDescription).ShowDialog();
+            new BuildEditorView(xmlBuild.tasks, buildName, buildDescription,this).ShowDialog();
         }
 
 
@@ -165,6 +167,6 @@ namespace BuilderApplication.View
             this.WindowState = FormWindowState.Minimized;
         }
 
-
+        
     }
 }

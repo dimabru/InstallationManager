@@ -19,6 +19,7 @@ namespace BuilderApplication.View.File
         int movY;
 
 
+        public BMainForm BmainForm;
 
         private List<Task> tasks { get; set; }
         public Build build { get; set; }
@@ -33,10 +34,10 @@ namespace BuilderApplication.View.File
             populatePlugins();
         }
 
-        public BuildEditorView(List<Task> tsks, string name, string desc)
+        public BuildEditorView(List<Task> tsks, string name, string desc, BMainForm BmainForm)
         {
             InitializeComponent();
-
+            this.BmainForm = BmainForm;
             tasks = tsks;
             this.Name = name;
             buildDescription = desc;
@@ -188,6 +189,7 @@ namespace BuilderApplication.View.File
         private void buttonSave_Click(object sender, EventArgs e)
         {
             new BuildDetailsView(tasks, buildName, buildDescription, packagePath).ShowDialog();
+            //BmainForm.Refresh();
         }
 
         private void validTreeButtons(object sender, TreeViewEventArgs e)
