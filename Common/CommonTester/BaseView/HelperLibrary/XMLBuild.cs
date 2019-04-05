@@ -1,5 +1,6 @@
 ﻿using HelperProject.HelperLibrary.Exceptions;
 using HelperProject.HelperLibrary.Plugins;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -47,7 +48,8 @@ namespace HelperProject.HelperLibrary
                     {
                         string label = inputElement.Attribute("Label").Value;
                         string value = inputElement.Attribute("Value").Value;
-                        InsertionValueHelper insertion = new InsertionValueHelper(InsertionValueHelper.InputType.TextBox, label);
+                        InsertionValueHelper.InputType input = (InsertionValueHelper.InputType)Enum.Parse(typeof(InsertionValueHelper.InputType), inputElement.Attribute("Type").Value);
+                        InsertionValueHelper insertion = new InsertionValueHelper(input, label);
 
                         plugin.valueDict[insertion] = value;
                     }
