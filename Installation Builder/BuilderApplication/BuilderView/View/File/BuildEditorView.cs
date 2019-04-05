@@ -4,13 +4,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Drawing;
 
 
 namespace BuilderApplication.View.File
 {
     public partial class BuildEditorView : HelperProject.BaseView.BaseMainForm
     {
+        /*
+        * integers set so the borderless form could move
+        */
+        int mov;
+        int movX;
+        int movY;
+
+
+
         private List<Task> tasks { get; set; }
         public Build build { get; set; }
         string buildName = string.Empty;
@@ -337,6 +346,40 @@ namespace BuilderApplication.View.File
             }
         }
 
+        /*
+         * the functions that give the borderless form, moving capabilities
+         */
 
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void ExitPictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ResumePictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        
     }
 }

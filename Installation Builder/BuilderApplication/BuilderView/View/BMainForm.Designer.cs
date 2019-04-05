@@ -125,6 +125,7 @@
             // 
             // listViewCurrentBuilds
             // 
+            this.listViewCurrentBuilds.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.listViewCurrentBuilds.Location = new System.Drawing.Point(153, 63);
             this.listViewCurrentBuilds.Margin = new System.Windows.Forms.Padding(2);
             this.listViewCurrentBuilds.Name = "listViewCurrentBuilds";
@@ -135,6 +136,8 @@
             // 
             // richTextBoxDescription
             // 
+            this.richTextBoxDescription.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.richTextBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxDescription.Location = new System.Drawing.Point(153, 207);
             this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
