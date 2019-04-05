@@ -36,13 +36,13 @@
             // labelSelectPlugin
             // 
             this.labelSelectPlugin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelSelectPlugin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.labelSelectPlugin.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectPlugin.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelSelectPlugin.Location = new System.Drawing.Point(0, 0);
-            this.labelSelectPlugin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSelectPlugin.Name = "labelSelectPlugin";
-            this.labelSelectPlugin.Size = new System.Drawing.Size(807, 324);
+            this.labelSelectPlugin.Size = new System.Drawing.Size(605, 263);
             this.labelSelectPlugin.TabIndex = 0;
-            this.labelSelectPlugin.Text = "Select Plugin";
             this.labelSelectPlugin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // contextMenuStrip1
@@ -53,13 +53,12 @@
             // 
             // PluginControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.labelSelectPlugin);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PluginControl";
-            this.Size = new System.Drawing.Size(807, 324);
+            this.Size = new System.Drawing.Size(605, 263);
             this.ResumeLayout(false);
 
         }

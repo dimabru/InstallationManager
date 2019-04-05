@@ -55,7 +55,9 @@
             this.groupBoxBuildTasks.Controls.Add(this.treeViewTasks);
             this.groupBoxBuildTasks.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBoxBuildTasks.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxBuildTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxBuildTasks.Name = "groupBoxBuildTasks";
+            this.groupBoxBuildTasks.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxBuildTasks.Size = new System.Drawing.Size(439, 471);
             this.groupBoxBuildTasks.TabIndex = 2;
             this.groupBoxBuildTasks.TabStop = false;
@@ -64,9 +66,10 @@
             // 
             this.treeViewTasks.CheckBoxes = true;
             this.treeViewTasks.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeViewTasks.Location = new System.Drawing.Point(3, 18);
+            this.treeViewTasks.Location = new System.Drawing.Point(3, 17);
+            this.treeViewTasks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeViewTasks.Name = "treeViewTasks";
-            this.treeViewTasks.Size = new System.Drawing.Size(303, 450);
+            this.treeViewTasks.Size = new System.Drawing.Size(303, 452);
             this.treeViewTasks.TabIndex = 0;
             this.treeViewTasks.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.LoadDescription);
             // 
@@ -81,7 +84,8 @@
             // 
             // richTextBoxDescription
             // 
-            this.richTextBoxDescription.Location = new System.Drawing.Point(450, 95);
+            this.richTextBoxDescription.Location = new System.Drawing.Point(451, 95);
+            this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.Size = new System.Drawing.Size(399, 78);
             this.richTextBoxDescription.TabIndex = 4;
@@ -89,7 +93,8 @@
             // 
             // buttonExecute
             // 
-            this.buttonExecute.Location = new System.Drawing.Point(450, 179);
+            this.buttonExecute.Location = new System.Drawing.Point(451, 178);
+            this.buttonExecute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExecute.Name = "buttonExecute";
             this.buttonExecute.Size = new System.Drawing.Size(75, 23);
             this.buttonExecute.TabIndex = 5;
@@ -100,23 +105,27 @@
             // richTextBoxExecution
             // 
             this.richTextBoxExecution.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBoxExecution.Location = new System.Drawing.Point(439, 211);
+            this.richTextBoxExecution.Location = new System.Drawing.Point(439, 207);
+            this.richTextBoxExecution.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.richTextBoxExecution.Name = "richTextBoxExecution";
             this.richTextBoxExecution.ReadOnly = true;
-            this.richTextBoxExecution.Size = new System.Drawing.Size(426, 260);
+            this.richTextBoxExecution.Size = new System.Drawing.Size(422, 264);
             this.richTextBoxExecution.TabIndex = 6;
             this.richTextBoxExecution.Text = "";
             // 
             // BuildExecute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(865, 497);
+            this.ClientSize = new System.Drawing.Size(861, 497);
             this.Controls.Add(this.richTextBoxExecution);
             this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.richTextBoxDescription);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelBuildName);
             this.Controls.Add(this.groupBoxBuildTasks);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(176, 279);
             this.Name = "BuildExecute";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Controls.SetChildIndex(this.groupBoxBuildTasks, 0);

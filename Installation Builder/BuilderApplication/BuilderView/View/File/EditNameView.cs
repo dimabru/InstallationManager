@@ -35,5 +35,47 @@ namespace BuilderApplication.View.File
         {
             this.Close();
         }
+
+        private void ExitPictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        /*
+         * integers set so the borderless form could move
+         */
+        int mov;
+        int movX;
+        int movY;
+
+
+        /*
+         * the functions that give the borderless form, moving capabilities
+         */
+
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
     }
 }
