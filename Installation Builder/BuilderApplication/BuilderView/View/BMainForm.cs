@@ -138,5 +138,31 @@ namespace BuilderApplication.View
         {
             mov = 0;
         }
+
+        private void propertiesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            buttonCreateNewBuild_Click(sender,e);
+        }
+
+        private void quitToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void quitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PropertiesView propView = new PropertiesView();
+            propView.ShowDialog();
+        }
+
+        private void ExitpictureBox12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

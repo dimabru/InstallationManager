@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using HelperProject.BaseView;
 using BaseView;
@@ -11,13 +6,13 @@ using HelperProject.HelperLibrary;
 using System.Xml;
 using BaseView.HelperLibrary;
 using ExecutorView.View;
-using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace ExecutorApplication.View
 {
     public partial class EMainForm : BaseMainForm
     {
-        /*
+        /*.
          * integers set so the borderless form could move
          */
         int mov;
@@ -31,11 +26,21 @@ namespace ExecutorApplication.View
         {
             InitializeComponent();
             PropertiesHandler.CreateDefaultDirectory();
+            
+            foreach (ToolStrip item in this.menuStripMain.Items)
+            {
+                item.Visible = false;
+            }
+
             this.createBuildsPathLabel();
             this.populateBuilds();
         }
 
 
+        private void test()
+        {
+            
+        }
 
         protected override void WndProc(ref Message m)
         {
@@ -172,6 +177,10 @@ namespace ExecutorApplication.View
             mov = 0;
         }
 
+        /*
+         * Making all tha labels on the form to have transparent background 
+         */
+
         private void labelCurrentBuilds_Click(object sender, EventArgs e)
         {
             labelCurrentBuilds.BackColor = System.Drawing.Color.Transparent;
@@ -179,17 +188,51 @@ namespace ExecutorApplication.View
 
         private void labelCurrentBuildsFolder_Click(object sender, EventArgs e)
         {
-
+            labelCurrentBuildsFolder.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void labelBuildsFolderPath_Click(object sender, EventArgs e)
         {
-
+            labelBuildsFolderPath.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void labelDescription_Click(object sender, EventArgs e)
         {
+            labelDescription.BackColor = System.Drawing.Color.Transparent;
+        }
 
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            this.labelCurrentBuilds_Click(null, null);
+            this.labelCurrentBuildsFolder_Click(null, null);
+            this.labelBuildsFolderPath_Click(null, null);
+            this.labelDescription_Click(null, null);
+        }
+
+        /*
+         * end of the transparent settings.
+         */ 
+
+        private void ExitpictureBox12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void quitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ExitpictureBox12_Click(sender,e);
+        }
+
+        private void propertiesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PropertiesView propView = new PropertiesView();
+            propView.ShowDialog();
         }
     }
 }

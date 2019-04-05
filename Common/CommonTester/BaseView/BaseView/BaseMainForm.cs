@@ -12,6 +12,7 @@ namespace HelperProject.BaseView
 {
     public partial class BaseMainForm : Form
     {
+
         public BaseMainForm()
         {
             InitializeComponent();
@@ -21,5 +22,6 @@ namespace HelperProject.BaseView
         {
             new License().Show();
         }
+
     }
 }

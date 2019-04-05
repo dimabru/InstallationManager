@@ -13,6 +13,13 @@ namespace ExecutorView.View
 {
     public partial class BuildExecute : HelperProject.BaseView.BaseMainForm
     {
+        /*.
+         * integers set so the borderless form could move
+         */
+        int mov;
+        int movX;
+        int movY;
+
         private Build build { get; set; }
         public BuildExecute(Build build)
         {
@@ -83,6 +90,57 @@ namespace ExecutorView.View
                     task.plugins[j].enabled = treeViewTasks.Nodes[i].Nodes[j].Checked;
                 }
             }
+        }
+
+        private void ExitpictureBox12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ResumepictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        /*
+         * the functions that give the borderless form, moving capabilities
+         */
+
+        private void panelBuilderMainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panelBuilderMainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panelBuilderMainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void labelDescription_Click(object sender, EventArgs e)
+        {
+            labelDescription.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void labelBuildName_Click(object sender, EventArgs e)
+        {
+            labelBuildName.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            this.labelDescription_Click(null, null);
+            this.labelBuildName_Click(null, null);
         }
     }
 }
