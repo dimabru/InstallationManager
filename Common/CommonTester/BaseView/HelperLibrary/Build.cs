@@ -15,6 +15,7 @@ namespace HelperProject.HelperLibrary
         public string path { get; }
         public string description { get; set; }
         public List<Task> tasks { get; set; }
+        public string packagePath { get; set; }
 
         public Build(string buildName, string buildPath, string desc)
         {
@@ -46,16 +47,22 @@ namespace HelperProject.HelperLibrary
 
             foreach (Task task in tasks)
             {
-                buildElement.Add(task.Save());
+                buildElement.Add(task.Save(this.path));
             }
             string filepath = path + "\\BuildDetails.xml";
             Directory.CreateDirectory(path);
             buildXml.Add(buildElement);
             buildXml.Save(filepath);
 
+            if (!String.IsNullOrEmpty(this.packagePath))
+            {
+                Utils.CopyDirectoryContent(this.packagePath, this.path);
+            }
+
             XMLBuilds xmlBuilds = new XMLBuilds();
             xmlBuilds.addBuild(this);
             xmlBuilds.Save();
+
         }
 
     }

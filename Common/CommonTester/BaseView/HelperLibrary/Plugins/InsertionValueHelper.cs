@@ -12,7 +12,8 @@ namespace HelperProject.HelperLibrary.Plugins
         public enum InputType
         {
             TextBox, 
-            ComboBox
+            ComboBox,
+            BrowseFile
         }
 
         public InsertionValueHelper(InputType box, string lbl)

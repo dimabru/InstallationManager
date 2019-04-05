@@ -24,6 +24,7 @@ namespace BuilderApplication.View.File
         public Build build { get; set; }
         string buildName = string.Empty;
         string buildDescription = String.Empty;
+        private string packagePath = "";
 
         public BuildEditorView()
         {
@@ -186,7 +187,7 @@ namespace BuilderApplication.View.File
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            new BuildDetailsView(tasks, buildName, buildDescription).ShowDialog();
+            new BuildDetailsView(tasks, buildName, buildDescription, packagePath).ShowDialog();
         }
 
         private void validTreeButtons(object sender, TreeViewEventArgs e)
@@ -382,7 +383,16 @@ namespace BuilderApplication.View.File
 
         private void buttonLoadPackage_Click(object sender, EventArgs e)
         {
-            
+            string folderPath = Dialogs.OpenFolder();
+            if (String.IsNullOrEmpty(folderPath))
+            {
+                this.labelPackagePath.Text = "No package is selected";
+                this.packagePath = "";
+                return;
+            }
+
+            this.labelPackagePath.Text = $"Selected package:\n{folderPath}";
+            this.packagePath = folderPath;
         }
     }
 }

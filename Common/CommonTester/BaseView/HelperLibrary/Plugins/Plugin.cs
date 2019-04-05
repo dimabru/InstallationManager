@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -87,7 +88,7 @@ namespace HelperProject.HelperLibrary.Plugins
             return values;
         }
 
-        public XElement Save()
+        public XElement Save(string buildPath)
         {
             XElement pluginElement = new XElement("Plugin");
             pluginElement.Add(new XAttribute("Name", name));
@@ -99,6 +100,13 @@ namespace HelperProject.HelperLibrary.Plugins
                 inputValue.Add(new XAttribute("Type", insert.input));
                 inputValue.Add(new XAttribute("Label", insert.label));
                 inputValue.Add(new XAttribute("Value", valueDict[insert]));
+
+                if (insert.input == InsertionValueHelper.InputType.BrowseFile)
+                {
+                    string filePath = valueDict[insert];
+                    string targetPath = Path.Combine(buildPath, Path.GetFileName(filePath));
+                    File.Copy(filePath, targetPath);
+                }
 
                 pluginElement.Add(inputValue);
             }

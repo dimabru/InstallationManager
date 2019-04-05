@@ -72,6 +72,7 @@
     <Compile Include="HelperLibrary\Plugins\InsertionValueHelper.cs" />
     <Compile Include="HelperLibrary\Plugins\Plugin.cs" />
     <Compile Include="HelperLibrary\Plugins\RunCmd.cs" />
+    <Compile Include="HelperLibrary\Plugins\RunExternalFile.cs" />
     <Compile Include="HelperLibrary\PropertiesHandler.cs" />
     <Compile Include="HelperLibrary\Task.cs" />
     <Compile Include="HelperLibrary\Utils.cs" />

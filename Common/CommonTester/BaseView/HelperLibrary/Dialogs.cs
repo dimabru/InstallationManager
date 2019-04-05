@@ -40,5 +40,18 @@ namespace HelperProject.HelperLibrary
         {
             MessageBox.Show(message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public static string SelectFile()
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            DialogResult result = fileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                return fileDialog.FileName;
+            }
+
+            return "";
+        }
     }
 }

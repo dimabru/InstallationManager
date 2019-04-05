@@ -48,6 +48,7 @@
             this.ResumePictureBox2 = new System.Windows.Forms.PictureBox();
             this.ExitPictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonLoadPackage = new System.Windows.Forms.Button();
+            this.labelPackagePath = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,7 +69,9 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
+            this.splitContainer1.Panel1.Controls.Add(this.labelPackagePath);
             this.splitContainer1.Panel1.Controls.Add(this.buttonSave);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonLoadPackage);
             this.splitContainer1.Panel1.Controls.Add(this.labelChoosePlugin);
             this.splitContainer1.Panel1.Controls.Add(this.labelDescription);
             this.splitContainer1.Panel1.Controls.Add(this.buttonAddTask);
@@ -82,8 +85,8 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.pluginControl);
-            this.splitContainer1.Size = new System.Drawing.Size(829, 452);
-            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.Size = new System.Drawing.Size(829, 572);
+            this.splitContainer1.SplitterDistance = 387;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -219,7 +222,7 @@
             this.pluginControl.Location = new System.Drawing.Point(0, 0);
             this.pluginControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pluginControl.Name = "pluginControl";
-            this.pluginControl.Size = new System.Drawing.Size(829, 202);
+            this.pluginControl.Size = new System.Drawing.Size(829, 180);
             this.pluginControl.TabIndex = 0;
             // 
             // buttonEditTask
@@ -298,7 +301,7 @@
             this.panelBuilderMainForm.Location = new System.Drawing.Point(0, 0);
             this.panelBuilderMainForm.Margin = new System.Windows.Forms.Padding(1);
             this.panelBuilderMainForm.Name = "panelBuilderMainForm";
-            this.panelBuilderMainForm.Size = new System.Drawing.Size(993, 53);
+            this.panelBuilderMainForm.Size = new System.Drawing.Size(1063, 53);
             this.panelBuilderMainForm.TabIndex = 16;
             this.panelBuilderMainForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseDown);
             this.panelBuilderMainForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseMove);
@@ -320,7 +323,7 @@
             // 
             this.ExitPictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.ExitPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ExitPictureBox1.Image")));
-            this.ExitPictureBox1.Location = new System.Drawing.Point(942, 0);
+            this.ExitPictureBox1.Location = new System.Drawing.Point(1012, 0);
             this.ExitPictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 12, 1);
             this.ExitPictureBox1.Name = "ExitPictureBox1";
             this.ExitPictureBox1.Padding = new System.Windows.Forms.Padding(0, 16, 45, 0);
@@ -333,10 +336,9 @@
             // 
             this.buttonLoadPackage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
             this.buttonLoadPackage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLoadPackage.Enabled = false;
             this.buttonLoadPackage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLoadPackage.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonLoadPackage.Location = new System.Drawing.Point(854, 310);
+            this.buttonLoadPackage.Location = new System.Drawing.Point(28, 254);
             this.buttonLoadPackage.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLoadPackage.Name = "buttonLoadPackage";
             this.buttonLoadPackage.Size = new System.Drawing.Size(113, 28);
@@ -345,12 +347,23 @@
             this.buttonLoadPackage.UseVisualStyleBackColor = false;
             this.buttonLoadPackage.Click += new System.EventHandler(this.buttonLoadPackage_Click);
             // 
+            // labelPackagePath
+            // 
+            this.labelPackagePath.AutoSize = true;
+            this.labelPackagePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
+            this.labelPackagePath.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelPackagePath.Location = new System.Drawing.Point(24, 306);
+            this.labelPackagePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPackagePath.Name = "labelPackagePath";
+            this.labelPackagePath.Size = new System.Drawing.Size(155, 17);
+            this.labelPackagePath.TabIndex = 17;
+            this.labelPackagePath.Text = "No package is selected";
+            // 
             // BuildEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(993, 569);
-            this.Controls.Add(this.buttonLoadPackage);
+            this.ClientSize = new System.Drawing.Size(1063, 677);
             this.Controls.Add(this.panelBuilderMainForm);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonMoveDown);
@@ -369,7 +382,6 @@
             this.Controls.SetChildIndex(this.buttonMoveDown, 0);
             this.Controls.SetChildIndex(this.buttonDelete, 0);
             this.Controls.SetChildIndex(this.panelBuilderMainForm, 0);
-            this.Controls.SetChildIndex(this.buttonLoadPackage, 0);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -404,5 +416,6 @@
         private System.Windows.Forms.PictureBox ResumePictureBox2;
         private System.Windows.Forms.PictureBox ExitPictureBox1;
         private System.Windows.Forms.Button buttonLoadPackage;
+        private System.Windows.Forms.Label labelPackagePath;
     }
 }

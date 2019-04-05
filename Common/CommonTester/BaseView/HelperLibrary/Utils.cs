@@ -53,5 +53,28 @@ namespace HelperProject.HelperLibrary
 
             return false;
         }
+
+        public static void CopyDirectoryContent(string sourcePath, string destinationPath)
+        {
+            DirectoryInfo diSource = new DirectoryInfo(sourcePath);
+            DirectoryInfo diTarget = new DirectoryInfo(destinationPath);
+
+            void CopyAll(DirectoryInfo source, DirectoryInfo target) {
+                diTarget.Create();
+
+                foreach (FileInfo fi in diSource.GetFiles())
+                {
+                    fi.CopyTo(Path.Combine(diTarget.FullName, fi.Name), true);
+                }
+
+                foreach (DirectoryInfo di in source.GetDirectories())
+                {
+                    DirectoryInfo nextTarget = target.CreateSubdirectory(di.Name);
+                    CopyAll(di, nextTarget);
+                }
+            }
+
+            CopyAll(diSource, diTarget);
+        }
     }
 }

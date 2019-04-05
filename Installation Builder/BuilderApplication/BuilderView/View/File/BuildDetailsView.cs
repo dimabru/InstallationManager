@@ -16,11 +16,13 @@ namespace BuilderApplication.View.File
         int movY;
 
         List<Task> tasks;
+        private string packagePath;
 
-        public BuildDetailsView(List<Task> tsks, string name, string description)
+        public BuildDetailsView(List<Task> tsks, string name, string description, string packagePath)
         {
             InitializeComponent();
 
+            this.packagePath = packagePath;
             tasks = tsks;
             textBoxName.Text = name;
             richTextBoxDescription.Text = description;
@@ -54,6 +56,7 @@ namespace BuilderApplication.View.File
 
             Build build = new Build(buildName, path ,description);
             build.addTasks(tasks);
+            build.packagePath = this.packagePath;
             build.save();
 
             Dialogs.NoticeMessage("Build saved succesfully");

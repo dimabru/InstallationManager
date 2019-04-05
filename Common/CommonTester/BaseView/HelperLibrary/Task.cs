@@ -29,14 +29,14 @@ namespace HelperProject.HelperLibrary
             plugins.Add(plugin);
         }
 
-        public XElement Save()
+        public XElement Save(string buildPath)
         {
             XElement taskElement = new XElement("Task");
             taskElement.Add(new XAttribute("Name", name));
 
             foreach (Plugin plugin in plugins)
             {
-                taskElement.Add(plugin.Save());
+                taskElement.Add(plugin.Save(buildPath));
             }
 
             return taskElement;
