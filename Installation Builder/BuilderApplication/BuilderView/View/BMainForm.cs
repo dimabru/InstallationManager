@@ -164,5 +164,7 @@ namespace BuilderApplication.View
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+
     }
 }
