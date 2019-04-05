@@ -50,9 +50,9 @@ namespace ExecutorView.Engine
             List<string> values = plugin.getValues();
             this.outputWindow.Text = "";
 
-            foreach (string value in values)
+            foreach (InsertionValueHelper insertion in plugin.valueDict.Keys)
             {
-                Output output = this.executeCmd("cmd.exe", value);
+                Output output = this.executeCmd("cmd.exe", plugin.valueDict[insertion]);
                 if (!String.IsNullOrEmpty(output.errorOutput))
                 {
                     this.outputWindow.Text += $"Error: {output.errorOutput}\n";

@@ -59,8 +59,6 @@ namespace HelperProject.HelperLibrary
             DirectoryInfo diSource = new DirectoryInfo(sourcePath);
             DirectoryInfo diTarget = new DirectoryInfo(destinationPath);
 
-
-
             CopyAll(diSource, diTarget);
         }
 
