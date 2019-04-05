@@ -43,7 +43,9 @@ namespace HelperProject.HelperLibrary
                 string path = element.Attribute("Path").Value;
                 string description = element.Attribute("Description").Value;
 
-                builds.Add(new Build(name, path, description));
+                Build build = new Build(name, path, description);
+                build.loadTasks();
+                builds.Add(build);
             }
         }
 

@@ -39,6 +39,7 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonAddPlugin = new System.Windows.Forms.Button();
             this.comboBoxChoosePlugin = new System.Windows.Forms.ComboBox();
+            this.pluginControl = new BuilderApplication.View.File.PluginControl();
             this.buttonEditTask = new System.Windows.Forms.Button();
             this.buttonMoveUp = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.panelBuilderMainForm = new System.Windows.Forms.Panel();
             this.ResumePictureBox2 = new System.Windows.Forms.PictureBox();
             this.ExitPictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pluginControl = new BuilderApplication.View.File.PluginControl();
+            this.buttonLoadPackage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,7 +60,8 @@
             // splitContainer1
             // 
             this.splitContainer1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.splitContainer1.Location = new System.Drawing.Point(13, 49);
+            this.splitContainer1.Location = new System.Drawing.Point(17, 60);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -80,8 +82,9 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.pluginControl);
-            this.splitContainer1.Size = new System.Drawing.Size(622, 367);
-            this.splitContainer1.SplitterDistance = 199;
+            this.splitContainer1.Size = new System.Drawing.Size(829, 452);
+            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
             // buttonSave
@@ -91,9 +94,10 @@
             this.buttonSave.Enabled = false;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSave.Location = new System.Drawing.Point(338, 163);
+            this.buttonSave.Location = new System.Drawing.Point(451, 201);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(63, 23);
+            this.buttonSave.Size = new System.Drawing.Size(84, 28);
             this.buttonSave.TabIndex = 12;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
@@ -104,9 +108,10 @@
             this.labelChoosePlugin.AutoSize = true;
             this.labelChoosePlugin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
             this.labelChoosePlugin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelChoosePlugin.Location = new System.Drawing.Point(19, 12);
+            this.labelChoosePlugin.Location = new System.Drawing.Point(25, 15);
+            this.labelChoosePlugin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelChoosePlugin.Name = "labelChoosePlugin";
-            this.labelChoosePlugin.Size = new System.Drawing.Size(75, 13);
+            this.labelChoosePlugin.Size = new System.Drawing.Size(99, 17);
             this.labelChoosePlugin.TabIndex = 11;
             this.labelChoosePlugin.Text = "Choose Plugin";
             // 
@@ -115,9 +120,10 @@
             this.labelDescription.AutoSize = true;
             this.labelDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
             this.labelDescription.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelDescription.Location = new System.Drawing.Point(20, 70);
+            this.labelDescription.Location = new System.Drawing.Point(27, 86);
+            this.labelDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(60, 13);
+            this.labelDescription.Size = new System.Drawing.Size(79, 17);
             this.labelDescription.TabIndex = 10;
             this.labelDescription.Text = "Description";
             // 
@@ -127,9 +133,10 @@
             this.buttonAddTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAddTask.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonAddTask.Location = new System.Drawing.Point(338, 46);
+            this.buttonAddTask.Location = new System.Drawing.Point(451, 57);
+            this.buttonAddTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddTask.Name = "buttonAddTask";
-            this.buttonAddTask.Size = new System.Drawing.Size(63, 23);
+            this.buttonAddTask.Size = new System.Drawing.Size(84, 28);
             this.buttonAddTask.TabIndex = 8;
             this.buttonAddTask.Text = "Add Task";
             this.buttonAddTask.UseVisualStyleBackColor = false;
@@ -141,9 +148,10 @@
             this.textBoxTaskName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTaskName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxTaskName.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxTaskName.Location = new System.Drawing.Point(320, 20);
+            this.textBoxTaskName.Location = new System.Drawing.Point(427, 25);
+            this.textBoxTaskName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTaskName.Name = "textBoxTaskName";
-            this.textBoxTaskName.Size = new System.Drawing.Size(101, 20);
+            this.textBoxTaskName.Size = new System.Drawing.Size(134, 22);
             this.textBoxTaskName.TabIndex = 0;
             this.textBoxTaskName.Text = "Task name ";
             // 
@@ -152,9 +160,10 @@
             this.treeViewPlugins.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.treeViewPlugins.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeViewPlugins.HideSelection = false;
-            this.treeViewPlugins.Location = new System.Drawing.Point(427, 20);
+            this.treeViewPlugins.Location = new System.Drawing.Point(569, 25);
+            this.treeViewPlugins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.treeViewPlugins.Name = "treeViewPlugins";
-            this.treeViewPlugins.Size = new System.Drawing.Size(192, 166);
+            this.treeViewPlugins.Size = new System.Drawing.Size(256, 204);
             this.treeViewPlugins.TabIndex = 7;
             this.treeViewPlugins.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.validTreeButtons);
             // 
@@ -162,11 +171,12 @@
             // 
             this.textBoxDescription.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDescription.Location = new System.Drawing.Point(20, 89);
+            this.textBoxDescription.Location = new System.Drawing.Point(27, 110);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.Size = new System.Drawing.Size(280, 97);
+            this.textBoxDescription.Size = new System.Drawing.Size(373, 119);
             this.textBoxDescription.TabIndex = 6;
             // 
             // buttonAddPlugin
@@ -175,9 +185,10 @@
             this.buttonAddPlugin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddPlugin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAddPlugin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonAddPlugin.Location = new System.Drawing.Point(167, 29);
+            this.buttonAddPlugin.Location = new System.Drawing.Point(223, 36);
+            this.buttonAddPlugin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAddPlugin.Name = "buttonAddPlugin";
-            this.buttonAddPlugin.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddPlugin.Size = new System.Drawing.Size(100, 28);
             this.buttonAddPlugin.TabIndex = 4;
             this.buttonAddPlugin.Text = "Add";
             this.buttonAddPlugin.UseVisualStyleBackColor = false;
@@ -193,11 +204,23 @@
             "Action Provider2",
             "Action Provider3",
             "Action Provider4"});
-            this.comboBoxChoosePlugin.Location = new System.Drawing.Point(20, 31);
+            this.comboBoxChoosePlugin.Location = new System.Drawing.Point(27, 38);
+            this.comboBoxChoosePlugin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxChoosePlugin.Name = "comboBoxChoosePlugin";
-            this.comboBoxChoosePlugin.Size = new System.Drawing.Size(141, 21);
+            this.comboBoxChoosePlugin.Size = new System.Drawing.Size(187, 24);
             this.comboBoxChoosePlugin.TabIndex = 3;
             this.comboBoxChoosePlugin.SelectedIndexChanged += new System.EventHandler(this.updatePlugin);
+            // 
+            // pluginControl
+            // 
+            this.pluginControl.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pluginControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pluginControl.inputDict = ((System.Collections.Generic.Dictionary<string, System.Windows.Forms.Control>)(resources.GetObject("pluginControl.inputDict")));
+            this.pluginControl.Location = new System.Drawing.Point(0, 0);
+            this.pluginControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pluginControl.Name = "pluginControl";
+            this.pluginControl.Size = new System.Drawing.Size(829, 202);
+            this.pluginControl.TabIndex = 0;
             // 
             // buttonEditTask
             // 
@@ -205,9 +228,10 @@
             this.buttonEditTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonEditTask.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonEditTask.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEditTask.Location = new System.Drawing.Point(650, 69);
+            this.buttonEditTask.Location = new System.Drawing.Point(867, 85);
+            this.buttonEditTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEditTask.Name = "buttonEditTask";
-            this.buttonEditTask.Size = new System.Drawing.Size(63, 23);
+            this.buttonEditTask.Size = new System.Drawing.Size(84, 28);
             this.buttonEditTask.TabIndex = 9;
             this.buttonEditTask.Text = "Edit";
             this.buttonEditTask.UseVisualStyleBackColor = false;
@@ -220,9 +244,10 @@
             this.buttonMoveUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMoveUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMoveUp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonMoveUp.Location = new System.Drawing.Point(650, 95);
+            this.buttonMoveUp.Location = new System.Drawing.Point(867, 117);
+            this.buttonMoveUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMoveUp.Name = "buttonMoveUp";
-            this.buttonMoveUp.Size = new System.Drawing.Size(63, 23);
+            this.buttonMoveUp.Size = new System.Drawing.Size(84, 28);
             this.buttonMoveUp.TabIndex = 13;
             this.buttonMoveUp.Text = "Move Up";
             this.buttonMoveUp.UseVisualStyleBackColor = false;
@@ -236,9 +261,10 @@
             this.buttonMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonMoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMoveDown.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonMoveDown.Location = new System.Drawing.Point(650, 119);
+            this.buttonMoveDown.Location = new System.Drawing.Point(867, 146);
+            this.buttonMoveDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMoveDown.Name = "buttonMoveDown";
-            this.buttonMoveDown.Size = new System.Drawing.Size(63, 34);
+            this.buttonMoveDown.Size = new System.Drawing.Size(84, 42);
             this.buttonMoveDown.TabIndex = 14;
             this.buttonMoveDown.Text = "Move Down";
             this.buttonMoveDown.UseVisualStyleBackColor = false;
@@ -251,9 +277,10 @@
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonDelete.Location = new System.Drawing.Point(650, 159);
+            this.buttonDelete.Location = new System.Drawing.Point(867, 196);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(63, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(84, 28);
             this.buttonDelete.TabIndex = 15;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -271,7 +298,7 @@
             this.panelBuilderMainForm.Location = new System.Drawing.Point(0, 0);
             this.panelBuilderMainForm.Margin = new System.Windows.Forms.Padding(1);
             this.panelBuilderMainForm.Name = "panelBuilderMainForm";
-            this.panelBuilderMainForm.Size = new System.Drawing.Size(745, 43);
+            this.panelBuilderMainForm.Size = new System.Drawing.Size(993, 53);
             this.panelBuilderMainForm.TabIndex = 16;
             this.panelBuilderMainForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseDown);
             this.panelBuilderMainForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBuilderMainForm_MouseMove);
@@ -280,11 +307,11 @@
             // ResumePictureBox2
             // 
             this.ResumePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("ResumePictureBox2.Image")));
-            this.ResumePictureBox2.Location = new System.Drawing.Point(676, 1);
+            this.ResumePictureBox2.Location = new System.Drawing.Point(901, 1);
             this.ResumePictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.ResumePictureBox2.Name = "ResumePictureBox2";
-            this.ResumePictureBox2.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.ResumePictureBox2.Size = new System.Drawing.Size(31, 42);
+            this.ResumePictureBox2.Padding = new System.Windows.Forms.Padding(0, 16, 45, 0);
+            this.ResumePictureBox2.Size = new System.Drawing.Size(41, 52);
             this.ResumePictureBox2.TabIndex = 4;
             this.ResumePictureBox2.TabStop = false;
             this.ResumePictureBox2.Click += new System.EventHandler(this.ResumePictureBox2_Click);
@@ -293,31 +320,37 @@
             // 
             this.ExitPictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.ExitPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ExitPictureBox1.Image")));
-            this.ExitPictureBox1.Location = new System.Drawing.Point(707, 0);
-            this.ExitPictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 9, 1);
+            this.ExitPictureBox1.Location = new System.Drawing.Point(942, 0);
+            this.ExitPictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 12, 1);
             this.ExitPictureBox1.Name = "ExitPictureBox1";
-            this.ExitPictureBox1.Padding = new System.Windows.Forms.Padding(0, 13, 34, 0);
-            this.ExitPictureBox1.Size = new System.Drawing.Size(38, 43);
+            this.ExitPictureBox1.Padding = new System.Windows.Forms.Padding(0, 16, 45, 0);
+            this.ExitPictureBox1.Size = new System.Drawing.Size(51, 53);
             this.ExitPictureBox1.TabIndex = 3;
             this.ExitPictureBox1.TabStop = false;
             this.ExitPictureBox1.Click += new System.EventHandler(this.ExitPictureBox1_Click);
             // 
-            // pluginControl
+            // buttonLoadPackage
             // 
-            this.pluginControl.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pluginControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pluginControl.inputDict = ((System.Collections.Generic.Dictionary<string, System.Windows.Forms.Control>)(resources.GetObject("pluginControl.inputDict")));
-            this.pluginControl.Location = new System.Drawing.Point(0, 0);
-            this.pluginControl.Margin = new System.Windows.Forms.Padding(4);
-            this.pluginControl.Name = "pluginControl";
-            this.pluginControl.Size = new System.Drawing.Size(622, 164);
-            this.pluginControl.TabIndex = 0;
+            this.buttonLoadPackage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(79)))), ((int)(((byte)(158)))));
+            this.buttonLoadPackage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoadPackage.Enabled = false;
+            this.buttonLoadPackage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonLoadPackage.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonLoadPackage.Location = new System.Drawing.Point(854, 310);
+            this.buttonLoadPackage.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLoadPackage.Name = "buttonLoadPackage";
+            this.buttonLoadPackage.Size = new System.Drawing.Size(113, 28);
+            this.buttonLoadPackage.TabIndex = 13;
+            this.buttonLoadPackage.Text = "Load package";
+            this.buttonLoadPackage.UseVisualStyleBackColor = false;
+            this.buttonLoadPackage.Click += new System.EventHandler(this.buttonLoadPackage_Click);
             // 
             // BuildEditorView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(745, 462);
+            this.ClientSize = new System.Drawing.Size(993, 569);
+            this.Controls.Add(this.buttonLoadPackage);
             this.Controls.Add(this.panelBuilderMainForm);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonMoveDown);
@@ -326,8 +359,8 @@
             this.Controls.Add(this.buttonEditTask);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(221, 319);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(295, 393);
             this.Name = "BuildEditorView";
             this.Text = "Build Editor";
             this.Controls.SetChildIndex(this.buttonEditTask, 0);
@@ -336,6 +369,7 @@
             this.Controls.SetChildIndex(this.buttonMoveDown, 0);
             this.Controls.SetChildIndex(this.buttonDelete, 0);
             this.Controls.SetChildIndex(this.panelBuilderMainForm, 0);
+            this.Controls.SetChildIndex(this.buttonLoadPackage, 0);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -369,5 +403,6 @@
         private System.Windows.Forms.Panel panelBuilderMainForm;
         private System.Windows.Forms.PictureBox ResumePictureBox2;
         private System.Windows.Forms.PictureBox ExitPictureBox1;
+        private System.Windows.Forms.Button buttonLoadPackage;
     }
 }

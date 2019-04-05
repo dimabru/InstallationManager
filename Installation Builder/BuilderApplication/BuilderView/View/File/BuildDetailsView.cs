@@ -1,6 +1,7 @@
 ﻿using HelperProject.HelperLibrary;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BuilderApplication.View.File
@@ -46,6 +47,10 @@ namespace BuilderApplication.View.File
             string buildName = textBoxName.Text;
             string description = richTextBoxDescription.Text;
             string path = DefaultInfo.BuildsLocation + "\\" + buildName;
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
             Build build = new Build(buildName, path ,description);
             build.addTasks(tasks);

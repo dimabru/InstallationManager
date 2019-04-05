@@ -21,6 +21,11 @@ namespace HelperProject.HelperLibrary
             name = buildName;
             path = buildPath;
             description = desc;
+            tasks = new List<Task>();
+        }
+
+        public void loadTasks()
+        {
             this.tasks = new XMLBuild(path + "\\BuildDetails.xml").tasks;
         }
 

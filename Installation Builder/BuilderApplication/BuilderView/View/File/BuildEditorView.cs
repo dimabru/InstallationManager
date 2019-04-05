@@ -380,6 +380,9 @@ namespace BuilderApplication.View.File
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void buttonLoadPackage_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
