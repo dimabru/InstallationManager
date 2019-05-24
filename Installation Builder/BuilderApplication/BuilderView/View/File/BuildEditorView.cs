@@ -160,6 +160,8 @@ namespace BuilderApplication.View.File
 
             else
             {
+                this.pluginControl.Controls.Clear();
+                pluginControl.Refresh();
                 Plugin plugin = Plugin.LocatePlugin(selectedPlugin);
                 textBoxDescription.Text = plugin.description;
                 pluginControl.appendPluginInfo(plugin);
@@ -169,6 +171,10 @@ namespace BuilderApplication.View.File
 
         private void buttonEditTask_Click(object sender, EventArgs e)
         {
+            if (treeViewPlugins.SelectedNode == null)
+            {
+                return;
+            }
             string name = treeViewPlugins.SelectedNode.Text;
             new EditNameView(name, this).ShowDialog();
         }
@@ -216,6 +222,10 @@ namespace BuilderApplication.View.File
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             TreeNode selected = treeViewPlugins.SelectedNode;
+            if (selected == null)
+            {
+                return;
+            }
             // Selected node is a task
             if (selected.Level == 0)
             {
@@ -331,11 +341,12 @@ namespace BuilderApplication.View.File
             {
                 if (pluginIndex == pluginList.Count - 1)
                 {
-                    pluginList.Remove(toMove);
                     if (taskIndex == tasks.Count - 1)
                     {
                         return;
                     }
+                    pluginList.Remove(toMove);
+                    
                     Task task = tasks.ElementAt(taskIndex + 1);
                     task.plugins.Insert(0, toMove);
                 }

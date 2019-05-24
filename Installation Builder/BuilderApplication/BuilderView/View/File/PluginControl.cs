@@ -109,5 +109,10 @@ namespace BuilderApplication.View.File
             InsertionValueHelper insertion = this.plugin.insertions[index];
             this.plugin.valueDict[insertion] = selectedFile;
         }
+
+        public void clear()
+        {
+            this.inputDict.Clear();
+        }
     }
 }
