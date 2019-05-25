@@ -1,0 +1,3 @@
+<Plugin name="Delete File" description="Deletes a selected files">
+	<InsertionValue Label="Select a file to delete" InputType="BrowseFile"/>
+</Plugin>

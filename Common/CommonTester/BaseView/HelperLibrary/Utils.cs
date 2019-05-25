@@ -77,5 +77,19 @@ namespace HelperProject.HelperLibrary
                 CopyAll(di, nextTarget);
             }
         }
+
+        public static void DeleteDirWithContent(string folderPath)
+        {
+            DirectoryInfo di = new DirectoryInfo(folderPath);
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete();
+            }
+            Directory.Delete(folderPath);
+        }
     }
 }

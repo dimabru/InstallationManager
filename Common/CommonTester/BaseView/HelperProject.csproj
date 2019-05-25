@@ -79,6 +79,7 @@
     <Compile Include="HelperLibrary\XMLBuild.cs" />
     <Compile Include="HelperLibrary\XMLBuilds.cs" />
     <Compile Include="HelperLibrary\XMLFile.cs" />
+    <Compile Include="HelperLibrary\XMLPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseView\PropertyOptions\GeneralControl.cs">
       <SubType>UserControl</SubType>

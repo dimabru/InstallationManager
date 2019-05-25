@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\PluginLoader.cs" />
     <Compile Include="View\BMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,9 +125,7 @@
       <Name>HelperProject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Engine\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="cinemadisplay.ico" />
   </ItemGroup>

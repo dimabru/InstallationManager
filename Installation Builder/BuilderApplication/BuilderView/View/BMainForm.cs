@@ -6,7 +6,7 @@ using System;
 using System.Windows.Forms;
 using System.Xml;
 using System.Drawing.Drawing2D;
-
+using BuilderView.Engine;
 
 namespace BuilderApplication.View
 {
@@ -168,6 +168,15 @@ namespace BuilderApplication.View
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void importPluginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string folderPath = Dialogs.OpenFolder();
+            if (String.IsNullOrEmpty(folderPath))
+            {
+                return;
+            }
+            PluginLoader pluginLoader = new PluginLoader(folderPath);
+            pluginLoader.save();
+        }
     }
 }

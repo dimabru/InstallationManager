@@ -1,0 +1,3 @@
+<Plugin name=[PluginName] description=[PluginDescription]>
+	<InsertionValue Label=[Insertion value short description] InputType=[ComboBox || TextBox || FolderSelect || FileSelect]/>
+</Plugin>
