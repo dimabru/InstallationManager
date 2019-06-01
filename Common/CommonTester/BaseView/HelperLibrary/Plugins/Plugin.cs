@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaseView.HelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -60,6 +61,24 @@ namespace HelperProject.HelperLibrary.Plugins
                 {
                     Plugin plugin = (Plugin)Activator.CreateInstance(type);
                     PluginList.Add(plugin);
+                }
+            }
+
+            if (Directory.Exists(DefaultInfo.ImportedPluginsLocation))
+            {
+                List<string> subDirs = new List<string>(Directory.GetDirectories(DefaultInfo.ImportedPluginsLocation));
+                foreach (string dir in subDirs)
+                {
+                    try
+                    {
+                        string xmlPath = Path.Combine(dir, "setup.xml");
+                        XMLPlugin plugin = new XMLPlugin(xmlPath);
+                        PluginList.Add(plugin.plugin);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
                 }
             }
         }

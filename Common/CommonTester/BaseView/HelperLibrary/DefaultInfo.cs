@@ -12,6 +12,7 @@ namespace HelperProject.HelperLibrary
         public static string BuildsConfigLocation = $".\\Config.xml";
         public static string BuildsDefaultConfigFileLocation = $".\\HelperLibrary\\OutFiles\\BuilderDefaultConfig.xml";
         public static string BuildDetailsFileName = "BuildDetails.xml";
+        public static string ImportedPluginsLocation = $"{DefaultPath}\\plugins";
         public static string ProjectLocation
         {
             get
