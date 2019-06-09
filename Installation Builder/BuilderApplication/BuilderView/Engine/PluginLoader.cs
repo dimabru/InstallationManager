@@ -67,7 +67,7 @@ namespace BuilderView.Engine
 
         public void save()
         {
-            string pluginsFolder = Path.Combine(DefaultInfo.DefaultPath, "plugins");
+            string pluginsFolder = DefaultInfo.ImportedPluginsLocation;
             if (!Directory.Exists(pluginsFolder))
             {
                 Directory.CreateDirectory(pluginsFolder);

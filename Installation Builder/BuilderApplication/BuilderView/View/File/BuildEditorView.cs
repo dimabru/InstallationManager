@@ -161,6 +161,7 @@ namespace BuilderApplication.View.File
             else
             {
                 this.pluginControl.Controls.Clear();
+                this.pluginControl.inputDict.Clear();
                 pluginControl.Refresh();
                 Plugin plugin = Plugin.LocatePlugin(selectedPlugin);
                 textBoxDescription.Text = plugin.description;

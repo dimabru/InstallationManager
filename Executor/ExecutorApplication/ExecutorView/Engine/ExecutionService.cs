@@ -54,7 +54,19 @@ namespace ExecutorView.Engine
             foreach (InsertionValueHelper insertion in plugin.valueDict.Keys)
             {
                 Output output;
-                if (insertion.input == InsertionValueHelper.InputType.BrowseFile)
+                if (plugin.importedPlugin)
+                {
+                    string pluginPath = Path.Combine(DefaultInfo.ImportedPluginsLocation, plugin.name);
+                    string exeFile = Directory.GetFiles(pluginPath).ToList().Find(f => f.EndsWith(".exe"));
+                    if (exeFile == null)
+                    {
+                        Dialogs.ErrorMessage($"No executable located for plugin {plugin.name}");
+                        return;
+                    }
+
+                    output = this.executeCmd(exeFile, plugin.valueDict[insertion], true);
+                }
+                else if (insertion.input == InsertionValueHelper.InputType.BrowseFile)
                 {
                     string filepath = plugin.valueDict[insertion];
                     string filename = Path.GetFileName(filepath);
@@ -90,9 +102,11 @@ namespace ExecutorView.Engine
             else
             {
                 this.outputWindow.Text += $"Running file: {filename}";
+                p.StartInfo.Arguments = cmd;
             }
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
+            MessageBox.Show(cmd);
+            MessageBox.Show(filename);
             p.Start();
             p.WaitForExit();
 

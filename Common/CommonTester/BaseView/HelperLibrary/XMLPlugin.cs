@@ -13,12 +13,12 @@ namespace BaseView.HelperLibrary
     public class XMLPlugin : XMLFile
     {
         public Plugin plugin;
-        public XMLPlugin(string path) : base(path)
+        public XMLPlugin(string path, bool imported = false) : base(path)
         {
-            populatPlugin();
+            populatPlugin(imported);
         }
 
-        private void populatPlugin()
+        private void populatPlugin(bool imported)
         {
             List<XElement> elements = GetElements("Plugin");
             if (elements.Count != 1)
@@ -30,6 +30,7 @@ namespace BaseView.HelperLibrary
             string pluginDescription = pluginElement.Attribute("description").Value;
 
             plugin = new Plugin(pluginDescription, pluginName);
+            plugin.importedPlugin = imported;
             List<XElement> inputValues = pluginElement.Descendants("InsertionValue").ToList();
             foreach (XElement inputValue in inputValues)
             {

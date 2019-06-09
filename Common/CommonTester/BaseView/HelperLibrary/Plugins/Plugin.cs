@@ -16,6 +16,7 @@ namespace HelperProject.HelperLibrary.Plugins
         public List<InsertionValueHelper> insertions { get; set; }
         public Dictionary<InsertionValueHelper, string> valueDict { get; set; }
         public bool enabled { get; set; }
+        public bool importedPlugin = false;
 
         public Plugin(string desc, string Name)
         {
@@ -72,7 +73,7 @@ namespace HelperProject.HelperLibrary.Plugins
                     try
                     {
                         string xmlPath = Path.Combine(dir, "setup.xml");
-                        XMLPlugin plugin = new XMLPlugin(xmlPath);
+                        XMLPlugin plugin = new XMLPlugin(xmlPath, imported: true);
                         PluginList.Add(plugin.plugin);
                     }
                     catch
@@ -112,6 +113,7 @@ namespace HelperProject.HelperLibrary.Plugins
             XElement pluginElement = new XElement("Plugin");
             pluginElement.Add(new XAttribute("Name", name));
             pluginElement.Add(new XAttribute("Description", description));
+            pluginElement.Add(new XAttribute("Imported", this.importedPlugin));
 
             foreach (InsertionValueHelper insert in insertions)
             {

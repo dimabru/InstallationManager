@@ -44,6 +44,14 @@ namespace HelperProject.HelperLibrary
                     List<XElement> inputElements = pluginElement.Descendants("Input").ToList();
                     Plugin plugin = new Plugin(name);
 
+                    if (pluginElement.Attribute("Imported") != null)
+                    {
+                        if (pluginElement.Attribute("Imported").Value == "true")
+                        {
+                            plugin.importedPlugin = true;
+                        }
+                    }
+
                     foreach (XElement inputElement in inputElements)
                     {
                         string label = inputElement.Attribute("Label").Value;

@@ -96,12 +96,6 @@ namespace BuilderApplication.View.File
             {
                 return;
             }
-
-            if (!selectedFile.EndsWith(".exe") && !selectedFile.EndsWith(".msi"))
-            {
-                Dialogs.ErrorMessage("File must end with exe or msi");
-                return;
-            }
             
             Button button = (Button)sender;
             button.Text = selectedFile;
